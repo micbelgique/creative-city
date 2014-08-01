@@ -15,8 +15,8 @@
     </div>
 
     <div>
-      <% Form::label('description', 'Contenu'); %>
-      <% Form::textarea('description'); %>
+      <% Form::label('content', 'Contenu'); %>
+      <% Form::textarea('content'); %>
     </div>
 
     <div>

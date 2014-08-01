@@ -9,7 +9,19 @@ class EntryController extends BaseController {
 
   public function indexJson() {
     $entries = Entry::all();
-    return Response::json($entries);
+
+    //dd($entries->toArray());
+
+    $blah = $entries->map(function($entry){
+      return $entry->asJson();
+    });
+
+    // $blah = array_map(function($entry){
+    //   $entry['path'] = "aurels";
+    //   return $entry;
+    // }, $entries->toArray());
+
+    return Response::json($blah);
   }
 
   public function show($id) {
@@ -20,7 +32,10 @@ class EntryController extends BaseController {
   public function showAsAuthor($token) {
     $entry = Entry::where('token', '=', $token)->first();
     if($entry){
-      return $entry->title;
+      return View::make('entries.show')->with('entry', $entry)
+                                       ->with('is_author', true);
+    } else {
+      App::abort(404);
     }
   }
 
@@ -40,7 +55,7 @@ class EntryController extends BaseController {
       'title'        => 'required',
       'author_name'  => 'required',
       'author_email' => 'required|email',
-      'description'  => 'required',
+      'content'      => 'required',
       'kind'         => 'required|in:article,event'
     );
 
@@ -58,11 +73,17 @@ class EntryController extends BaseController {
           $message->to($entry->author_email, $entry->author_name)->subject($subject);
         });
 
+        foreach(User::all() as $user) {
+          Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($user, $entry) {
+            $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+            $message->to($user->email, $user->name)->subject($subject);
+          });
+        }
+
         return Redirect::route('entries.index');
       } else {
         return "Impossible de créer l'article/évènement.";
       }
     }
-
   }
 }
