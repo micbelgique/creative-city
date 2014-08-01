@@ -2,8 +2,9 @@
 
 @section('content')
   <div ng-controller="EntriesIndexCtrl">
-    @foreach($entries as $entry)
-      <p><% $entry->title %></p>
-    @endforeach
+    <div class="entry"
+         ng-repeat="entry in entries">
+      {{ entry.title }}
+    </div>
   </div>
 @stop
