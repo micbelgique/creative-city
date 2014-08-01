@@ -9,4 +9,5 @@ Route::get('/', function() {
 });
 
 Route::resource('entries', 'EntryController');
+Route::get('entries.json', array('uses' => 'EntryController@index_json'));
 
