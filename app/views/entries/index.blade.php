@@ -1,7 +1,9 @@
 @extends('layouts/application')
 
 @section('content')
-  @foreach($entries as $entry)
-    <p><% $entry->title %></p>
-  @endforeach
+  <div ng-controller="EntriesIndexCtrl">
+    @foreach($entries as $entry)
+      <p><% $entry->title %></p>
+    @endforeach
+  </div>
 @stop

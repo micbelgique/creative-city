@@ -4,8 +4,12 @@ class EntryController extends BaseController {
 
   public function index() {
     $entries = Entry::all();
-    //return View::make('entries.index')->with('entries', $entries);
-     return Response::json($entries);
+    return View::make('entries.index')->with('entries', $entries);
+  }
+
+  public function index_json() {
+    $entries = Entry::all();
+    return Response::json($entries);
   }
 
   public function create() {

@@ -16,9 +16,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body id=""
-        ng-app="CreativeApp">
-
+  <body ng-app="CreativeApp">
     <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -165,10 +163,11 @@
       </footer>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/bootstrap-3.2.0.min.js"></script>
+    <script src="/js/angular-1.2.21.min.js"></script>
     <script src="/js/angular-masonry.js"></script>
-    <script src="/js/home.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/entries-index.js"></script>
   </body>
 </html>
