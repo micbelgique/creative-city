@@ -21,7 +21,7 @@ return array(
     | Based on $app['path'] value.
     */
 
-    'paths' => array('/coffee'),
+    'paths' => array('/assets/coffee'),
 
     /*
     |--------------------------------------------------------------------------
