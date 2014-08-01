@@ -31,7 +31,12 @@ class EntryController extends BaseController {
                                          ->withErrors($validator);
     }
     else {
-      if($entry->save()){
+      if($entry->save()) {
+        Mail::send('emails.new_entry_submitted', $data, function($message) {
+          $subject = 'Un nouvel article/évènement a été soumis';
+          $message->to('foo@example.com', 'John Smith')->subject($subject);
+        });
+
         return Redirect::route('entries.index');
       }
     }
