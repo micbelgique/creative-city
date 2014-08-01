@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/application')
 
 @section('content')
     @foreach($entries as $entry)
