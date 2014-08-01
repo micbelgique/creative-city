@@ -1,6 +1,11 @@
-angular.module('CreativeApp').controller('EntriesIndexCtrl', ($scope) ->
+angular.module('CreativeApp').controller('EntriesIndexCtrl', ($scope, $http) ->
+  reload = ->
+    $http.get('/entries.json').then((response) ->
+      $scope.entries = response.data
+    )
+
   init = ->
-    console.log("salut")
+    reload()
 
   $ ->
     init()
