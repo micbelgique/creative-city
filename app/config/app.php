@@ -121,6 +121,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+    'VTalbot\Coffee\CoffeeServiceProvider',
 
 	),
 
@@ -188,7 +189,12 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+    'Coffee'          => 'VTalbot\Coffee\Facades\Coffee',
 
 	),
 
 );
+
+// http://scotch.io/bar-talk/quick-tip-using-laravel-blade-with-angularjs
+Blade::setContentTags('<%', '%>');    // for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>');   // for escaped data
