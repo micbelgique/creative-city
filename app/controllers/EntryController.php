@@ -13,13 +13,27 @@ class EntryController extends BaseController {
   }
 
   public function store() {
-    $entry = new Entry(Input::all());
+    $input = Input::all();
 
-    if($entry->save()) {
-      return Redirect::route('entries.index')->with('flash', 'Votre post a été envoyé');
+    $rules = array(
+      'title'       => 'required',
+      'email'       => 'required|email',
+      'description' => 'required',
+      'kind'        => 'required|in:article,event'
+    );
+
+    $validator = Validator::make($input, $rules);
+    $entry     = new Entry($input);
+
+    if($validator->fails()) {
+      return View::make('entries.create')->with('entry', $entry)
+                                         ->withErrors($validator);
+    }
+    else {
+      if($entry->save()){
+        return Redirect::route('entries.index');
+      }
     }
 
-    return Redirect::route('entries.create')->withInput()->withErrors($s->errors());
   }
-
 }
