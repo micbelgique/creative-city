@@ -7,7 +7,7 @@
     <title>CreativeMons</title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,400,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/compiled-css/bootstrap-3.2.0.min.css">
     <link rel="stylesheet" href="/compiled-css/theme.css">
     <link rel="stylesheet" href="/compiled-css/header.css">
 
@@ -99,7 +99,7 @@
       </footer>
     </div>
 
-    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap-3.2.0.min.js"></script>
     <script src="/js/angular-1.2.21.min.js"></script>
     <script src="/js/angular-masonry.js"></script>
