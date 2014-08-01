@@ -7,9 +7,21 @@ class EntryController extends BaseController {
     return View::make('entries.index')->with('entries', $entries);
   }
 
-  public function index_json() {
+  public function indexJson() {
     $entries = Entry::all();
     return Response::json($entries);
+  }
+
+  public function show() {
+
+  }
+
+  public function showAsOwner() {
+
+  }
+
+  public function showAsVoter() {
+
   }
 
   public function create() {
