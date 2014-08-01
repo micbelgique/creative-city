@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"rhumsaa/uuid": "~2.7"
+		"rhumsaa/uuid": "~2.7",
+    "vtalbot/coffee": "1.*"
 	},
   "require-dev": {
     "panique/laravel-sass": "dev-master"
