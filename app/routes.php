@@ -5,3 +5,4 @@ Route::get('/', function() {
 });
 
 Route::resource('entries', 'EntryController');
+
