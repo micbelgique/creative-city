@@ -3,7 +3,12 @@
 @section('content')
   <% Form::model($entry, array('route' => array('entries.store'))) %>
 
-    ET TA MERE !
+    @if($errors->has())
+      CETTE PUTE
+      @foreach ($errors->all() as $error)
+        <div>{{ $error }}</div>
+      @endforeach
+    @endif
 
     <div>
       <% Form::label('title', 'Titre'); %>
@@ -30,7 +35,10 @@
       <% Form::text('author_email'); %>
     </div>
 
-    <% Form::submit('Soumettre') %>
+    <div>
+      <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement']); %>
+    </div>
 
+    <% Form::submit('Soumettre') %>
   <% Form::close() %>
 @stop
