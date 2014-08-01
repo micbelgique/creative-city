@@ -4,9 +4,8 @@
   <% Form::model($entry, array('route' => array('entries.store'))) %>
 
     @if($errors->has())
-      CETTE PUTE
       @foreach ($errors->all() as $error)
-        <div>{{ $error }}</div>
+        <div><% $error %></div>
       @endforeach
     @endif
 

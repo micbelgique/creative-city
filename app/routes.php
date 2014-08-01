@@ -10,5 +10,9 @@ Route::get('/', function() {
 
 Route::resource('entries', 'EntryController');
 
-Route::get('entries.json', array('uses' => 'EntryController@indexJson'));
+Route::get ('entries.json',           [                                 'uses' => 'EntryController@indexJson'    ]);
+Route::get ('author/entries/{token}', [ 'as' => 'entries.showAsAuthor', 'uses' => 'EntryController@showAsAuthor' ]);
 
+// Route::get ('voter/entries/{token}',           [ 'as' => '', 'uses' => 'EntryController@showAsVoter' ]);
+// Route::post('voter/entries/{token}/vote_up',   [ 'as' => '', 'uses' => 'EntryController@voteUp'      ]);
+// Route::post('voter/entries/{token}/vote_down', [ 'as' => '', 'uses' => 'EntryController@voteDown'    ]);

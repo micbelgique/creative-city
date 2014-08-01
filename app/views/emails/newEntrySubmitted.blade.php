@@ -9,7 +9,8 @@
 
       Merci pour votre soumission.
 
-
+      Voici votre lien :
+      <% $entry->authorUrl() %>
     </div>
   </body>
 </html>

@@ -12,12 +12,16 @@ class EntryController extends BaseController {
     return Response::json($entries);
   }
 
-  public function show() {
-
+  public function show($id) {
+    $entry = Entry::find($id);
+    return View::make('entries.show')->with('entry', $entry);
   }
 
-  public function showAsOwner() {
-
+  public function showAsAuthor($token) {
+    $entry = Entry::where('token', '=', $token)->first();
+    if($entry){
+      return $entry->title;
+    }
   }
 
   public function showAsVoter() {
@@ -33,10 +37,11 @@ class EntryController extends BaseController {
     $input = Input::all();
 
     $rules = array(
-      'title'       => 'required',
-      'email'       => 'required|email',
-      'description' => 'required',
-      'kind'        => 'required|in:article,event'
+      'title'        => 'required',
+      'author_name'  => 'required',
+      'author_email' => 'required|email',
+      'description'  => 'required',
+      'kind'         => 'required|in:article,event'
     );
 
     $validator = Validator::make($input, $rules);
@@ -48,12 +53,14 @@ class EntryController extends BaseController {
     }
     else {
       if($entry->save()) {
-        Mail::send('emails.new_entry_submitted', $data, function($message) {
-          $subject = 'Un nouvel article/évènement a été soumis';
-          $message->to('foo@example.com', 'John Smith')->subject($subject);
+        Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
+          $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+          $message->to($entry->author_email, $entry->author_name)->subject($subject);
         });
 
         return Redirect::route('entries.index');
+      } else {
+        return "Impossible de créer l'article/évènement.";
       }
     }
 
