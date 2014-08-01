@@ -7,6 +7,9 @@
 		"laravel/framework": "4.2.*",
 		"rhumsaa/uuid": "~2.7"
 	},
+  "require-dev": {
+    "panique/laravel-sass": "dev-master"
+  },
 	"autoload": {
 		"classmap": [
 			"app/commands",
