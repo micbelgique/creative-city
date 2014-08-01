@@ -10,18 +10,11 @@ class EntryController extends BaseController {
   public function indexJson() {
     $entries = Entry::all();
 
-    //dd($entries->toArray());
-
-    $blah = $entries->map(function($entry){
+    $response = $entries->map(function($entry){
       return $entry->asJson();
     });
 
-    // $blah = array_map(function($entry){
-    //   $entry['path'] = "aurels";
-    //   return $entry;
-    // }, $entries->toArray());
-
-    return Response::json($blah);
+    return Response::json($response);
   }
 
   public function show($id) {

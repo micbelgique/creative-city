@@ -15,7 +15,7 @@ class Entry extends Eloquent {
     return [
       'id'    => $this->id,
       'title' => $this->title,
-      'path'  => "qscqfcqdfqfd",
+      'path'  => URL::route("entries.show", array($this->id))
     ];
   }
 }
