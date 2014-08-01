@@ -1,0 +1,76 @@
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+
+  .navbar {
+    background-color: black;
+    border: 0px;
+    min-height: inherit;
+
+    .container {
+      .agenda, .news, .add {
+        font-size: 23px;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          color: white;
+
+          img {
+            width: 28px;
+            vertical-align: -4px;
+            margin-right: 2px;
+          }
+
+          i {
+            margin-left: 3px;
+          }
+        }
+
+        a:hover {
+          -moz-opacity: 0.70;
+          -khtml-opacity: 0.70;
+          opacity: 0.70;
+          filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+          filter:alpha(opacity=70);
+        }
+      }
+    }
+  }
+}
+
+.navbar-wrapper > .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.carousel {
+  height: 540px;
+  margin-bottom: 60px;
+
+  .item {
+    height: 500px;
+    background-color: #777;
+
+    background: url(/images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .carousel-caption {
+    top: 112px;
+  }
+}

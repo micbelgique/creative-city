@@ -1,37 +1,3 @@
-body {
-  padding-bottom: 40px;
-  color: #5a5a5a;
-}
-.navbar-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
-}
-.navbar-wrapper > .container-fluid {
-  padding-right: 0;
-  padding-left: 0;
-}
-.navbar-wrapper .navbar .container {
-  width: auto;
-}
-.carousel {
-  height: 540px;
-  margin-bottom: 60px;
-}
-.carousel-caption {
-  z-index: 10;
-}
-.carousel .item {
-  height: 500px;
-  background-color: #777;
-  background: url(/images/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .marketing .col-lg-4 {
   margin-bottom: 20px;
   text-align: center;
@@ -42,16 +8,4 @@ body {
 .marketing .col-lg-4 p {
   margin-right: 10px;
   margin-left: 10px;
-}
-.carousel-caption {
-  top: 112px;
-}
-@media (min-width: 768px) {
-  .navbar-wrapper .navbar {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
 }

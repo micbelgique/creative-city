@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CreativeMons</title>
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/compiled-css/theme.css">
+    <link rel="stylesheet" href="/compiled-css/header.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,17 +26,26 @@
             <div class="nav navbar-nav pull-left">
               <ul class="nav navbar-nav pull-right">
                 <li class="agenda">
-                  <a href="#">Agenda</a>
+                  <a href="#">
+                    <img src="images/calendar.png">
+                    Agenda
+                  </a>
                 </li>
                 <li class="news">
-                  <a href="#">News</a>
+                  <a href="#">
+                    <img src="images/news.png">
+                    News
+                  </a>
                 </li>
               </ul>
             </div>
             <div>
               <ul class="nav navbar-nav pull-right">
                 <li class="add">
-                  <a href="#">Ajouter une actualité</a>
+                  <a href="#">
+                    Ajouter une actualité
+                    <i class="glyphicon glyphicon-plus"></i>
+                  </a>
                 </li>
               </ul>
             </div>
