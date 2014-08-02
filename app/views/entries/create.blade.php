@@ -44,6 +44,19 @@
       <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement']); %>
     </div>
 
+    <div id="events-only">
+      <div>
+        <% Form::label('start_date', 'Date de début'); %>
+        <% Form::text('start_date', '', ['data-datepicker' => 'datepicker']); %>
+      </div>
+
+      <div>
+        <% Form::label('end_date', 'Date de fin'); %>
+        <% Form::text('end_date', '', ['data-datepicker' => 'datepicker']); %>
+      </div>
+    </div>
+
+
     <% Form::submit('Soumettre') %>
   <% Form::close() %>
 @stop

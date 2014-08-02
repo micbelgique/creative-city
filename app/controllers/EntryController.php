@@ -67,6 +67,10 @@ class EntryController extends BaseController {
       'kind'         => 'required|in:article,event'
     );
 
+    if($input['kind'] == "event") {
+      $rules['start_date'] = 'required';
+    }
+
     $validator = Validator::make($input, $rules);
     $entry     = new Entry($input);
 

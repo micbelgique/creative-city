@@ -9,7 +9,8 @@ class Entry extends Eloquent implements StaplerableInterface {
 
   protected $table = 'entries';
   protected $fillable = array('title', 'content', 'url', 'picture',
-                              'author_name', 'author_email', 'kind');
+                              'author_name', 'author_email', 'kind',
+                              'start_date', 'end_date');
 
 
   public function __construct(array $attributes = array()) {
