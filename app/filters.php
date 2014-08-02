@@ -88,3 +88,12 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('storeToken', function() {
+
+	if(Input::get('user_token')) {
+		Cookie::forever('user_token', Input::get('user_token'));
+	} else {
+		dd('wtf queue cookie');
+	}
+});

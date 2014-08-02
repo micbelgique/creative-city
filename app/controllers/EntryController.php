@@ -38,8 +38,8 @@ class EntryController extends BaseController {
     }
   }
 
-  public function showAsVoter($token, $id) {
-    $voter = User::where('token', '=', $token);
+  public function showAsVoter($id) {
+    $voter = User::where('token', '=', Cookie::get('user_token'));
     $entry = Entry::find($id);
 
     if($voter && $entry){
@@ -95,8 +95,8 @@ class EntryController extends BaseController {
     }
   }
 
-  public function voteUp($token, $id) {
-    $voter = User::where('token', '=', $token);
+  public function voteUp($id) {
+    $voter = User::where('token', '=', Cookie::get('user_token'));
     $entry = Entry::find($id);
 
     if($voter && $entry){
@@ -107,12 +107,12 @@ class EntryController extends BaseController {
     }
   }
 
-  public function voteDown($token, $id) {
-    $voter = User::where('token', '=', $token);
+  public function voteDown($id) {
+    $voter = User::where('token', '=', Cookie::get('user_token'));
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      // create voting here
+      $entry->voteDown($user);
       return Redirect::route('entries.showAsVoter', [ $token, $id ]);
     } else {
       App::abort(404);
