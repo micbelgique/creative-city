@@ -1,7 +1,7 @@
 @extends('layouts/application')
 
 @section('content')
-  <% Form::model($entry, array('route' => array('entries.store'))) %>
+  <% Form::model($entry, ['route' => array('entries.store'), 'files' => true]) %>
 
     @if($errors->has())
       @foreach ($errors->all() as $error)
@@ -35,8 +35,27 @@
     </div>
 
     <div>
+      <% Form::label('picture', 'Image'); %>
+      <% Form::file('picture'); %>
+    </div>
+
+
+    <div>
       <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement']); %>
     </div>
+
+    <div id="events-only">
+      <div>
+        <% Form::label('start_date', 'Date de début'); %>
+        <% Form::text('start_date', '', ['data-datepicker' => 'datepicker']); %>
+      </div>
+
+      <div>
+        <% Form::label('end_date', 'Date de fin'); %>
+        <% Form::text('end_date', '', ['data-datepicker' => 'datepicker']); %>
+      </div>
+    </div>
+
 
     <% Form::submit('Soumettre') %>
   <% Form::close() %>

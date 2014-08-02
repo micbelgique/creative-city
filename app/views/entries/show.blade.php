@@ -1,7 +1,15 @@
 @extends('layouts/application')
 
 @section('content')
-  <h1><% $entry->title %></h1>
+
+  <div>
+    <h1><% $entry->title %></h1>
+    <div>
+      <% $entry->content %>
+    </div>
+  </div>
+
+  <img src="<?= $entry->picture->url('medium') ?>" >
 
   <% $entry->authorUrl() %>
 @stop

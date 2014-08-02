@@ -1,3 +1,5 @@
+/public/system/*
+/public/system
 /bootstrap/compiled.php
 /vendor
 /app/config/database.php

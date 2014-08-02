@@ -67,6 +67,10 @@ class EntryController extends BaseController {
       'kind'         => 'required|in:article,event'
     );
 
+    if($input['kind'] == "event") {
+      $rules['start_date'] = 'required';
+    }
+
     $validator = Validator::make($input, $rules);
     $entry     = new Entry($input);
 
@@ -76,14 +80,14 @@ class EntryController extends BaseController {
     }
     else {
       if($entry->save()) {
-        Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
-          $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+        Mail::send('emails.authorEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
+          $subject = 'Votre article a été soumis';
           $message->to($entry->author_email, $entry->author_name)->subject($subject);
         });
 
         foreach(User::all() as $user) {
-          Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($user, $entry) {
-            $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+          Mail::send('emails.moderatorEntrySubmitted', [ 'entry' => $entry ], function($message) use ($user, $entry) {
+            $subject = 'Action requise: un article a été posté sur Creative Mons';
             $message->to($user->email, $user->name)->subject($subject);
           });
         }

@@ -1,11 +1,27 @@
 <?php
 
 use Rhumsaa\Uuid\Uuid;
+use Codesleeve\Stapler\ORM\StaplerableInterface;
+use Codesleeve\Stapler\ORM\EloquentTrait;
 
-class Entry extends Eloquent {
+class Entry extends Eloquent implements StaplerableInterface {
+  use EloquentTrait;
 
   protected $table = 'entries';
-  protected $fillable = array('title', 'content', 'url', 'author_name', 'author_email', 'kind');
+  protected $fillable = array('title', 'content', 'url', 'picture',
+                              'author_name', 'author_email', 'kind',
+                              'start_date', 'end_date');
+
+
+  public function __construct(array $attributes = array()) {
+    $this->hasAttachedFile('picture', [
+        'styles' => [
+          'medium' => '300x300',
+          'thumb' => '100x100'
+        ]
+    ]);
+    parent::__construct($attributes);
+  }
 
   public function votes() {
     return $this->hasMany('Vote', 'user_id');
