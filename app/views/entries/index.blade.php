@@ -6,7 +6,13 @@
     <div class="col-lg-4 entry"
          ng-repeat="entry in entries">
       <div class="inner-entry">
-        <img class="img-rounded" src="{{ entry.picture_url }}">
+        <a href="{{ entry.path }}">
+          <img class="img-rounded" src="{{ entry.picture_url }}"/>
+        </a>
+        <div ng-show="entry.kind == 'event'"
+             class="event-date">
+          13 JUILLET
+        </div>
         <div class="red-line">
         </div>
         <h2>{{ entry.title }}</h2>

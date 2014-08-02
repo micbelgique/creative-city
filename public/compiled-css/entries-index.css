@@ -28,6 +28,21 @@
   text-align: left;
   height: 100px;
 }
+.entries .entry .inner-entry .event-date {
+  top: 0px;
+  position: absolute;
+  background-color: #e53953;
+  -moz-opacity: 0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  width: 90px;
+  height: 90px;
+  left: 25px;
+  font-size: 20px;
+  padding-top: 14px;
+  color: white;
+}
 .entries .entry .inner-entry .details {
   text-align: left;
 }
