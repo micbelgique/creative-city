@@ -64,7 +64,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function notifyAuthor() {
-    $entry = this;
+    $entry = $this;
 
     Mail::send('emails.authorEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
       $subject = 'Votre article a été soumis';
@@ -73,7 +73,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function notifyUsers() {
-    $entry = this;
+    $entry = $this;
 
     foreach(User::all() as $user) {
       Mail::send('emails.userEntrySubmitted', [ 'entry' => $entry, 'user' => $user ], function($message) use ($user, $entry) {

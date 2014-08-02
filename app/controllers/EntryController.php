@@ -80,17 +80,33 @@ class EntryController extends BaseController {
   }
 
   public function store() {
-    $input = Input::all();
+    #$input = Input::all();
+
+    $input = [
+      'kind'         => Input::get('kind'),
+      'title'        => Input::get('title'),
+      'content'      => Input::get('content'),
+      'url'          => Input::get('url'),
+      'author_name'  => Input::get('author_name'),
+      'author_email' => Input::get('author_email'),
+      'picture'      => Input::get('picture'),
+    ];
+
+    if($input['kind'] == 'event') {
+      $input['start_date'] = Input::get('start_date');
+      $input['end_date']   = Input::get('end_date');
+    }
 
     $rules = array(
       'title'        => 'required',
+      'content'      => 'required',
       'author_name'  => 'required',
       'author_email' => 'required|email',
       'content'      => 'required',
       'kind'         => 'required|in:article,event'
     );
 
-    if($input['kind'] == "event") {
+    if($input['kind'] == 'event') {
       $rules['start_date'] = 'required';
     }
 
