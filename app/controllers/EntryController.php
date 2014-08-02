@@ -2,7 +2,6 @@
 
 class EntryController extends BaseController {
 
-
   private function getUserToken() {
     $userToken = Input::get('voter_token');
 
@@ -63,9 +62,6 @@ class EntryController extends BaseController {
     $userToken = $this->getUserToken();
     $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
-
-
-    // dd($voter);
 
     if($voter && $entry){
       return View::make('entries.show')->with('entry', $entry)

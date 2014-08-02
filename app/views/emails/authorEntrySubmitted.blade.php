@@ -19,9 +19,7 @@
         <a href="<% $entry->authorUrl() %>"><% $entry->authorUrl() %></a>.
       </p>
 
-      <p>
-        Ce lien est le votre, ne le partagez pas publiquement.
-      </p>
+      <p>Ce lien est le votre, ne le partagez pas publiquement.</p>
 
     </div>
   </body>

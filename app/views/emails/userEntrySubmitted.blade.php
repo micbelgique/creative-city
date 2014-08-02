@@ -5,9 +5,8 @@
   </head>
   <body>
     <div>
-      Un gus a posté un nouvel article sur CreativeCity. Vous avez XX heures pour
-      voter pour ou contre sa publication. Si vous trainez, vous serez totalement
-      inutile.
+      Une personne a posté un nouvel article sur CreativeCity. Merci de voter dans les plus brefs délais.
+      Si vous trainez, vous serez totalement inutile.
     </div>
 
     <div>
