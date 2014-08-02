@@ -42,6 +42,9 @@ body {
 .navbar-wrapper .navbar .container .agenda, .navbar-wrapper .navbar .container .news {
   font-weight: 100;
 }
+.navbar-wrapper .navbar .container .agenda.selected a, .navbar-wrapper .navbar .container .news.selected a {
+  color: #e53953;
+}
 .navbar-wrapper .navbar .container .add {
   font-weight: 600;
 }

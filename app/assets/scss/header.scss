@@ -50,6 +50,12 @@ body {
         font-weight: 100;
       }
 
+      .agenda.selected, .news.selected {
+        a {
+          color:#e53953;
+        }
+      }
+
       .add {
         font-weight: 600;
       }

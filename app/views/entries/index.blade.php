@@ -1,9 +1,9 @@
 @extends('layouts/application')
 
 @section('content')
-  <div class="entries">
+  <div class="entries" id="entries">
     @foreach($entries as $entry)
-      <div class="col-lg-4 entry">
+      <div class="col-lg-4 entry <% $entry->kind %>">
         <div class="inner-entry">
           <a href="<% $entry->url() %>">
             <img class="img-rounded" src="<% $entry->picture->url('medium') %>"/>
