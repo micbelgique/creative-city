@@ -13,9 +13,12 @@ class Entry extends Eloquent {
 
   public function asJson() {
     return [
-      'id'    => $this->id,
-      'title' => $this->title,
-      'path'  => URL::route("entries.show", array($this->id))
+      'id'          => $this->id,
+      'title'       => $this->title,
+      'content'     => $this->content,
+      'author_name' => $this->author_name,
+      'kind'        => $this->kind,
+      'path'        => URL::route("entries.show", array($this->id))
     ];
   }
 }
