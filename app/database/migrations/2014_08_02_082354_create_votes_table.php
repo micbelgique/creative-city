@@ -18,5 +18,4 @@ class CreateVotesTable extends Migration {
 	public function down(){
 		Schema::drop('votes');
 	}
-
 }

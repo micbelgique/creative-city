@@ -7,9 +7,21 @@
     <div>
       <% $entry->content %>
     </div>
+
+      <img src="<?= $entry->picture->url('medium') ?>" >
   </div>
 
-  <img src="<?= $entry->picture->url('medium') ?>" >
+
+  @if(isset($is_author) && $is_author)
+    <div>
+      <h2>PRIVATE PANEL:</h2>
+
+      Votes: <% $entry->votes->size() %>
+
+
+    </div>
+  @endif
+
 
   <% $entry->authorUrl() %>
 @stop
