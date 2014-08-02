@@ -28,13 +28,13 @@
               <ul class="nav navbar-nav pull-right">
                 <li class="agenda">
                   <a href="#">
-                    <img src="images/calendar.png">
+                    <img src="/images/calendar.png">
                     Agenda
                   </a>
                 </li>
                 <li class="news">
                   <a href="#">
-                    <img src="images/news.png">
+                    <img src="/images/news.png">
                     News
                   </a>
                 </li>
@@ -60,7 +60,7 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-              <img src="images/logo.png"/>
+              <img src="/images/logo.png"/>
             </div>
           </div>
         </div>
