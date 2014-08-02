@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"rhumsaa/uuid": "~2.7",
-    "vtalbot/coffee": "1.*"
+    "vtalbot/coffee": "1.*",
+    "codesleeve/laravel-stapler": "dev-master"
 	},
   "require-dev": {
     "panique/laravel-sass": "dev-master"

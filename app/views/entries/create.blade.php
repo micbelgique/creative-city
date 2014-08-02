@@ -1,7 +1,7 @@
 @extends('layouts/application')
 
 @section('content')
-  <% Form::model($entry, array('route' => array('entries.store'))) %>
+  <% Form::model($entry, ['route' => array('entries.store'), 'files' => true]) %>
 
     @if($errors->has())
       @foreach ($errors->all() as $error)
@@ -33,6 +33,12 @@
       <% Form::label('author_email', 'Votre email'); %>
       <% Form::text('author_email'); %>
     </div>
+
+    <div>
+      <% Form::label('picture', 'Image'); %>
+      <% Form::file('picture'); %>
+    </div>
+
 
     <div>
       <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement']); %>
