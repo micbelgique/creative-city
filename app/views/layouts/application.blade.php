@@ -27,13 +27,13 @@
             <div class="nav navbar-nav pull-left">
               <ul class="nav navbar-nav pull-right">
                 <li class="agenda">
-                  <a href="#entries">
+                  <a href="#content">
                     <img src="/images/calendar.png">
                     Agenda
                   </a>
                 </li>
                 <li class="news">
-                  <a href="#entries">
+                  <a href="#content">
                     <img src="/images/news.png">
                     News
                   </a>
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="container marketing">
+    <div class="container marketing" id="content">
       <div class="row">
         @yield('content')
       </div>

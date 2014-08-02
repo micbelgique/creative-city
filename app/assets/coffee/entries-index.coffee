@@ -2,7 +2,9 @@ $ ->
   reloadMasonry = ->
     container = document.querySelector('.entries');
     window.msnry = new Masonry(container, {
-      itemSelector: '.entry'
+      itemSelector: '.entry',
+      columnWidth: 390,
+      transitionDuration: '0.6s'
     })
 
   selectNews = ->
@@ -10,9 +12,10 @@ $ ->
 
     $('.entry.event').fadeOut( ->
       window.msnry.layout()
-      $('.entry.article').fadeIn( ->
-        window.msnry.layout()
-      )
+    )
+
+    $('.entry.article').fadeIn( ->
+      window.msnry.layout()
     )
 
   selectAgenda = ->
@@ -20,9 +23,10 @@ $ ->
 
     $('.entry.article').fadeOut( ->
       window.msnry.layout()
-      $('.entry.event').fadeIn( ->
-        window.msnry.layout()
-      )
+    )
+
+    $('.entry.event').fadeIn( ->
+      window.msnry.layout()
     )
 
   selectAll = ->
