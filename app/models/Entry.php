@@ -27,6 +27,14 @@ class Entry extends Eloquent implements StaplerableInterface {
     return $this->hasMany('Vote');
   }
 
+  public function upVotes() {
+    return $this->votes()->where('up', '=', true);
+  }
+
+  public function downVotes() {
+    return $this->votes()->where('up', '=', false);
+  }
+
   public function hasVoted($user) {
     return $this->votes()->where('user_id', '=', $user->id)->count() > 0;
   }
@@ -74,6 +82,10 @@ class Entry extends Eloquent implements StaplerableInterface {
                 ->subject($subject);
       });
     }
+  }
+
+  public function isPublished() {
+    return $this->upVotes()->count() >= 3 && $this->downVotes()->count() <= 2;
   }
 
   public function asJson() {

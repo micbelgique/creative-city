@@ -2,7 +2,6 @@
 
 class EntryController extends BaseController {
 
-
   private function getUserToken() {
     $userToken = Input::get('voter_token');
 
@@ -18,7 +17,10 @@ class EntryController extends BaseController {
   }
 
   public function index() {
-    $entries = Entry::all();
+    $entries = Entry::all()->filter(function($entry){
+      return $entry->isPublished();
+    });
+
     return View::make('entries.index')->with('entries', $entries);
   }
 
@@ -45,8 +47,8 @@ class EntryController extends BaseController {
   public function showAsAuthor($token) {
     $entry = Entry::where('token', '=', $token)->first();
     if($entry){
-      $positive_votes = $entry->votes()->where('up', '=', true);
-      $negative_votes = $entry->votes()->where('up', '=', false);
+      $positiveVotes = $entry->upVotes();
+      $negativeVotes = $entry->downVotes();
 
       return View::make('entries.show')->with('entry', $entry)
                                        ->with('votes_count', $entry->votes()->count())
@@ -64,9 +66,6 @@ class EntryController extends BaseController {
     $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
 
-
-    // dd($voter);
-
     if($voter && $entry){
       return View::make('entries.show')->with('entry', $entry)
                                        ->with('voter', $voter);
@@ -81,17 +80,33 @@ class EntryController extends BaseController {
   }
 
   public function store() {
-    $input = Input::all();
+    #$input = Input::all();
+
+    $input = [
+      'kind'         => Input::get('kind'),
+      'title'        => Input::get('title'),
+      'content'      => Input::get('content'),
+      'url'          => Input::get('url'),
+      'author_name'  => Input::get('author_name'),
+      'author_email' => Input::get('author_email'),
+      'picture'      => Input::get('picture'),
+    ];
+
+    if($input['kind'] == 'event') {
+      $input['start_date'] = Input::get('start_date');
+      $input['end_date']   = Input::get('end_date');
+    }
 
     $rules = array(
       'title'        => 'required',
+      'content'      => 'required',
       'author_name'  => 'required',
       'author_email' => 'required|email',
       'content'      => 'required',
       'kind'         => 'required|in:article,event'
     );
 
-    if($input['kind'] == "event") {
+    if($input['kind'] == 'event') {
       $rules['start_date'] = 'required';
     }
 
