@@ -2,14 +2,55 @@
 
 @section('content')
 
-  <div>
-    <h1><% $entry->title %></h1>
-    <div>
+  <div class="row">
+    <div class="container" style="height:550px;overflow:hidden;">
+      <img src="<?= $entry->picture->url('large') ?>">
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <h1 style="width: 100%;
+background-color: #e53953;
+padding: 20px;
+color: white;
+margin-top: 34px;
+text-transform: uppercase;
+font-family: 'Open Sans', sans-serif;
+font-weight: 700">
+      <% $entry->title %>
+    </h1>
+
+    <div class="content"
+         style="padding: 20px;padding-left:0px;font-size:18px;font-family: 'Open Sans', sans-serif;">
       <% $entry->content %>
     </div>
-
-      <img src="<?= $entry->picture->url('medium') ?>" >
   </div>
+
+  <div class="col-lg-5">
+    <div style="width: 100%;
+background-color: black;
+padding: 20px;
+color: white;
+margin-top: 34px;
+text-transform: uppercase;
+font-family: 'Open Sans', sans-serif;
+font-weight: 700">
+      http://softlab.mic-belgique.be/
+    </div>
+
+    <hr style="border-color: black"/>
+
+    <span style="font-family: 'Open Sans', sans-serif; font-size:18px;font-weight: 700;text-transform:uppercase">Article créé par :</span>
+    <br/>
+    <% $entry->author_name %>
+  </div>
+
+  <div style="clear:both">
+  </div>
+
+  <br/><br/>
+  <br/><br/>
+  <br/><br/>
 
   @if(isset($voter))
     <div>
