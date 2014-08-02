@@ -9,6 +9,10 @@ class EntryTableSeeder extends Seeder {
     copy('app/database/seeds/pictures/2.jpg', 'app/database/seeds/pictures/2b.jpg');
     copy('app/database/seeds/pictures/3.jpg', 'app/database/seeds/pictures/3b.jpg');
     copy('app/database/seeds/pictures/4.jpg', 'app/database/seeds/pictures/4b.jpg');
+    copy('app/database/seeds/pictures/5.jpg', 'app/database/seeds/pictures/5b.jpg');
+    copy('app/database/seeds/pictures/6.jpg', 'app/database/seeds/pictures/6b.jpg');
+    copy('app/database/seeds/pictures/7.jpg', 'app/database/seeds/pictures/7b.jpg');
+    copy('app/database/seeds/pictures/8.jpg', 'app/database/seeds/pictures/8b.jpg');
 
     Entry::create([ 'title'        => 'Ta mère',
                     'content'      => "Ta mère est une société montoise qui n'a pas froid aux yeux. C'est pour ça qu'on la met ici.",
@@ -29,6 +33,8 @@ class EntryTableSeeder extends Seeder {
                     'author_name'  => 'Romain Carlier',
                     'author_email' => 'romain.carlier@gmail.com',
                     'kind'         => 'event',
+                    'start_date'   => "2014-08-02",
+                    'end_date'     => "2014-08-02",
                     'picture'      => 'app/database/seeds/pictures/3b.jpg' ]);
 
     Entry::create([ 'title'        => 'Ton frère',
@@ -37,6 +43,40 @@ class EntryTableSeeder extends Seeder {
                     'author_email' => 'michael.hoste@gmail.com',
                     'kind'         => 'article',
                     'picture'      => 'app/database/seeds/pictures/4b.jpg' ]);
+
+    Entry::create([ 'title'        => 'Pechakucha',
+                    'content'      => "En japonais ça veut dire un truc comme 'blabla' (d'après Ruben mais personne n'a jamais vérifié)",
+                    'author_name'  => 'Ruben Casad',
+                    'author_email' => 'ruben.casad@gmail.com',
+                    'kind'         => 'article',
+                    'picture'      => 'app/database/seeds/pictures/5b.jpg' ]);
+
+    Entry::create([ 'title'        => 'Barbecues 101',
+                    'content'      => "Organisés par Meaweb, l'invitation aux barbecues est lancée contractuellement maximum 3 heures à l'avance pour bien prendre tout le monde par surprise.",
+                    'author_name'  => 'Simon',
+                    'author_email' => 'simon@gmail.com',
+                    'kind'         => 'event',
+                    'start_date'   => "2014-08-02",
+                    'end_date'     => "2014-08-02",
+                    'picture'      => 'app/database/seeds/pictures/6b.jpg' ]);
+
+    Entry::create([ 'title'        => 'Cafés numériques',
+                    'content'      => "Beaucoup de bières et parfois une petite conférence sur du numérique. Donc rien à voir avec du café.",
+                    'author_name'  => 'Antoine',
+                    'author_email' => 'antoine@gmail.com',
+                    'kind'         => 'event',
+                    'start_date'   => "2014-08-02",
+                    'end_date'     => "2014-08-02",
+                    'picture'      => 'app/database/seeds/pictures/7b.jpg' ]);
+
+    Entry::create([ 'title'        => 'Rendez-vous du pixel',
+                    'content'      => "Tous les pixels s'y donnent rendez-vous, et ils sont beaucoup !",
+                    'author_name'  => 'Romain',
+                    'author_email' => 'romain@gmail.com',
+                    'kind'         => 'event',
+                    'start_date'   => "2014-08-02",
+                    'end_date'     => "2014-08-02",
+                    'picture'      => 'app/database/seeds/pictures/8b.jpg' ]);
   }
 
 }

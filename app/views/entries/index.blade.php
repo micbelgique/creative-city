@@ -1,16 +1,18 @@
 @extends('layouts/application')
 
 @section('content')
-  <div class="entries" id="entries">
+  <div class="entries">
     @foreach($entries as $entry)
       <div class="col-lg-4 entry <% $entry->kind %>">
         <div class="inner-entry">
           <a href="<% $entry->url() %>">
             <img class="img-rounded" src="<% $entry->picture->url('medium') %>"/>
           </a>
-          @if ($entry->kind == 'event') %>
+          @if ($entry->kind == 'event')
             <div class="event-date">
-              13 JUILLET
+              <% date("d/m", strtotime($entry->start_date)) %>
+              <br/>
+              <% date("Y", strtotime($entry->start_date)) %>
             </div>
           @endif
           <div class="red-line">
