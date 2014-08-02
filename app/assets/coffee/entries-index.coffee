@@ -59,4 +59,5 @@ $ ->
     bindNews()
 
   $ ->
-    init()
+    if $('.entries').length
+      init()

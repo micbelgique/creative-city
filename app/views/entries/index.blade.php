@@ -10,9 +10,7 @@
           </a>
           @if ($entry->kind == 'event')
             <div class="event-date">
-              <% date("d/m", strtotime($entry->start_date)) %>
-              <br/>
-              <% date("Y", strtotime($entry->start_date)) %>
+              <% date("d-m", strtotime($entry->start_date)) %><br/><% date("Y", strtotime($entry->start_date)) %>
             </div>
           @endif
           <div class="red-line">
