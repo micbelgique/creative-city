@@ -11,15 +11,14 @@
 |
 */
 
-App::before(function($request)
-{
-	//
-});
+App::before(function($request) {});
 
 
-App::after(function($request, $response)
-{
-	//
+App::after(function($request, $response) {
+		if(Input::get('user_token')) {
+			//Cookie::queue('user_token', Input::get('user_token'), 120);
+			$response->withCookie(Cookie::make('user_token', Input::get('user_token'), 120));
+		}
 });
 
 /*
@@ -90,10 +89,4 @@ Route::filter('csrf', function()
 });
 
 Route::filter('storeToken', function() {
-
-	if(Input::get('user_token')) {
-		Cookie::forever('user_token', Input::get('user_token'));
-	} else {
-		dd('wtf queue cookie');
-	}
 });

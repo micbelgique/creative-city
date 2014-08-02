@@ -8,7 +8,7 @@ Route::when('/*', 'storeToken');
 
 Route::get('/', function() {
   //dd('token de ta mere ' . Cookie::get('user_token'));
-	return View::make('hello');
+	//return View::make('hello');
 });
 
 Route::resource('entries', 'EntryController');
