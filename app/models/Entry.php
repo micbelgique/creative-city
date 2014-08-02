@@ -24,7 +24,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function votes() {
-    return $this->hasMany('Vote', 'user_id');
+    return $this->hasMany('Vote');
   }
 
   public function hasVoted($user) {

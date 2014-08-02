@@ -31,8 +31,15 @@ class EntryController extends BaseController {
   public function showAsAuthor($token) {
     $entry = Entry::where('token', '=', $token)->first();
     if($entry){
+      $positive_votes = $entry->votes()->where('up', '=', true);
+      $negative_votes = $entry->votes()->where('up', '=', false);
+
       return View::make('entries.show')->with('entry', $entry)
+                                       ->with('votes_count', $entry->votes()->count())
+                                       ->with('positive_votes', $positive_votes)
+                                       ->with('negative_votes', $negative_votes)
                                        ->with('is_author', true);
+
     } else {
       App::abort(404);
     }

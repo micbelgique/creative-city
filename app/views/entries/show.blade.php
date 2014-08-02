@@ -13,11 +13,34 @@
 
 
   @if(isset($is_author) && $is_author)
-    <div>
+    <div style="background-color: yellow;">
       <h2>PRIVATE PANEL:</h2>
 
-      Votes: <% $entry->votes->size() %>
+      Nombre total de votes: <% $votes_count %>
 
+
+      @if($positive_votes->count() > 0)
+        <h3>Votes positifs</h3>
+        <ul>
+          @foreach ($positive_votes->get() as $vote)
+            <li><% $vote->user->name %></li>
+          @endforeach
+        </ul>
+      @else
+        <h3>Il n'y a pas de vote positif</h3>
+      @endif
+
+
+      @if($negative_votes->count() > 0)
+        <h3>Votes négatifs</h3>
+        <ul>
+          @foreach ($negative_votes->get() as $vote)
+            <li><% $vote->user->name %></li>
+          @endforeach
+        </ul>
+      @else
+        <h3>Il n'y a pas de vote négatifs</h3>
+      @endif
 
     </div>
   @endif
