@@ -51,6 +51,10 @@ class Entry extends Eloquent implements StaplerableInterface {
     return URL::route('entries.showAsAuthor', array($this->token));
   }
 
+  public function url() {
+    return URL::route("entries.show", array($this->id));
+  }
+
   public function asJson() {
     return [
       'id'          => $this->id,
@@ -58,7 +62,7 @@ class Entry extends Eloquent implements StaplerableInterface {
       'content'     => $this->content,
       'author_name' => $this->author_name,
       'kind'        => $this->kind,
-      'path'        => URL::route("entries.show", array($this->id)),
+      'path'        => $this->url(),
       'picture_url' => $this->picture->url('medium')
     ];
   }
