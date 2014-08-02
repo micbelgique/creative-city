@@ -100,7 +100,7 @@ class EntryController extends BaseController {
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      // create voting here
+      $entry->voteUp($user);
       return Redirect::route('entries.showAsVoter', [ $token, $id ]);
     } else {
       App::abort(404);
