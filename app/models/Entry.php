@@ -35,6 +35,7 @@ class Entry extends Eloquent implements StaplerableInterface {
     if(!$this->hasVoted($user)){
       $vote = new Vote([ 'user_id' => $user->id, 'up' => true ]);
       $this->votes()->save($vote);
+      return $vote;
     }
   }
 
@@ -42,6 +43,7 @@ class Entry extends Eloquent implements StaplerableInterface {
     if(!$this->hasVoted($user)){
       $vote = new Vote([ 'user_id' => $user->id, 'up' => false ]);
       $this->votes()->save($vote);
+      return $vote;
     }
   }
 

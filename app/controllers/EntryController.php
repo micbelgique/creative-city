@@ -93,6 +93,9 @@ class EntryController extends BaseController {
 
     if($input['kind'] == "event") {
       $rules['start_date'] = 'required';
+    } else {
+      unset($input['start_date']);
+      unset($input['end_date']);
     }
 
     $validator = Validator::make($input, $rules);
@@ -130,7 +133,9 @@ class EntryController extends BaseController {
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      $entry->voteUp($voter);
+      $vote = $entry->voteUp($voter);
+      $vote->notifyAuthor();
+
       return Redirect::route('entries.showAsVoter', [$id]);
     } else {
       App::abort(404);
@@ -143,7 +148,9 @@ class EntryController extends BaseController {
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      $entry->voteDown($voter);
+      $vote = $entry->voteDown($voter);
+      $vote->notifyAuthor();
+
       return Redirect::route('entries.showAsVoter', [$id]);
     } else {
       App::abort(404);
