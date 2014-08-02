@@ -1,62 +1,95 @@
 @extends('layouts/application')
 
 @section('content')
-  <% Form::model($entry, ['route' => array('entries.store'), 'files' => true]) %>
+  <% Form::model($entry, ['route' => array('entries.store'), 'files' => true, 'class' => "form-horizontal new-article"]) %>
 
-    @if($errors->has())
-      @foreach ($errors->all() as $error)
-        <div><% $error %></div>
-      @endforeach
-    @endif
-
-    <div>
-      <% Form::label('title', 'Titre'); %>
-      <% Form::text('title'); %>
+    <div class="errors col-sm-offset-4 col-sm-5">
+      @if($errors->has())
+        @foreach ($errors->all() as $error)
+          <div><% $error %></div>
+        @endforeach
+      @endif
     </div>
 
-    <div>
-      <% Form::label('content', 'Contenu'); %>
-      <% Form::textarea('content'); %>
+    <div class="form-group">
+      <% Form::label('author_name', 'Nom', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::text('author_name', '', ['class' => "form-control"]); %>
+      </div>
     </div>
 
-    <div>
-      <% Form::label('url', 'Lien internet'); %>
-      <% Form::text('url'); %>
+    <div class="form-group">
+      <% Form::label('author_email', 'Email', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::text('author_email', '', ['class' => "form-control"]); %>
+      </div>
     </div>
 
-    <div>
-      <% Form::label('author_name', 'Votre nom'); %>
-      <% Form::text('author_name'); %>
+    <div class="form-group">
+      <% Form::label('kind', 'Type de publication', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement'], '', ['class' => 'form-control']); %>
+      </div>
     </div>
 
-    <div>
-      <% Form::label('author_email', 'Votre email'); %>
-      <% Form::text('author_email'); %>
+    <div class="form-group">
+      <% Form::label('title', 'Titre', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::text('title', '', ['class' => "form-control"]); %>
+      </div>
     </div>
 
-    <div>
-      <% Form::label('picture', 'Image'); %>
-      <% Form::file('picture'); %>
+    <div class="form-group">
+      <% Form::label('content', 'Contenu', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::textarea('content', '', ['class' => "form-control"]); %>
+      </div>
     </div>
 
+    <div class="form-group">
+      <% Form::label('url', 'Lien internet', ['class' => "control-label col-sm-4"]); %>
 
-    <div>
-      <% Form::select('kind', ['article' => 'Article', 'event' => 'Evénement']); %>
+      <div class="col-sm-5">
+        <% Form::text('url', '', ['class' => "form-control"]); %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <% Form::label('picture', 'Image', ['class' => "control-label col-sm-4"]); %>
+
+      <div class="col-sm-5">
+        <% Form::file('picture', '', ['class' => "form-control"]); %>
+      </div>
     </div>
 
     <div id="events-only">
-      <div>
-        <% Form::label('start_date', 'Date de début'); %>
-        <% Form::text('start_date', '', ['data-datepicker' => 'datepicker']); %>
+      <div class="form-group">
+        <% Form::label('start_date', 'Date de début', ['class' => "control-label col-sm-4"]); %>
+
+        <div class="col-sm-5">
+          <% Form::text('start_date', '', ['class' => 'form-control datepicker']); %>
+        </div>
       </div>
 
-      <div>
-        <% Form::label('end_date', 'Date de fin'); %>
-        <% Form::text('end_date', '', ['data-datepicker' => 'datepicker']); %>
+      <div class="form-group">
+        <% Form::label('end_date', 'Date de fin', ['class' => "control-label col-sm-4"]); %>
+
+        <div class="col-sm-5">
+          <% Form::text('end_date', '', ['class' => 'form-control datepicker']); %>
+        </div>
       </div>
     </div>
 
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-5">
+        <% Form::submit('Soumettre', ['class' => 'btn btn-default']) %>
+      </div>
+    </div>
 
-    <% Form::submit('Soumettre') %>
   <% Form::close() %>
 @stop

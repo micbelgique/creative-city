@@ -9,3 +9,39 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+#content-anchor {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
+}
+.red-bar {
+  background-color: #e53953;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  height: 7px;
+}
+.form-control {
+  background-color: #eee;
+}
+.new-article {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.new-article .errors {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  background-color: #e53953;
+  padding: 20px;
+  color: white;
+}
+.btn-default {
+  background-color: #e53953;
+  color: white;
+  border-radius: 0px;
+  font-size: 22px;
+}
+.btn-default:hover {
+  background-color: #a53445;
+  color: white;
+}
