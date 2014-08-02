@@ -19,7 +19,13 @@ class EntryController extends BaseController {
 
   public function show($id) {
     $entry = Entry::find($id);
-    return View::make('entries.show')->with('entry', $entry);
+
+    if($entry) {
+      return View::make('entries.show')->with('entry', $entry);
+    } else {
+      App::abort(404);
+    }
+
   }
 
   public function showAsAuthor($token) {
@@ -32,8 +38,17 @@ class EntryController extends BaseController {
     }
   }
 
-  public function showAsVoter() {
+  public function showAsVoter($token, $id) {
+    $voter = User::where('token', '=', $token);
+    $entry = Entry::find($id);
 
+    if($voter && $entry){
+      return View::make('entries.show')->with('entry', $entry)
+                                       ->with('voter', $voter)
+                                       ->with('is_voter', true);
+    } else {
+      App::abort(404);
+    }
   }
 
   public function create() {
@@ -77,6 +92,30 @@ class EntryController extends BaseController {
       } else {
         return "Impossible de créer l'article/évènement.";
       }
+    }
+  }
+
+  public function voteUp($token, $id) {
+    $voter = User::where('token', '=', $token);
+    $entry = Entry::find($id);
+
+    if($voter && $entry){
+      // create voting here
+      return Redirect::route('entries.showAsVoter', [ $token, $id ]);
+    } else {
+      App::abort(404);
+    }
+  }
+
+  public function voteDown($token, $id) {
+    $voter = User::where('token', '=', $token);
+    $entry = Entry::find($id);
+
+    if($voter && $entry){
+      // create voting here
+      return Redirect::route('entries.showAsVoter', [ $token, $id ]);
+    } else {
+      App::abort(404);
     }
   }
 }
