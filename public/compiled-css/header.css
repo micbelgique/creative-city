@@ -15,10 +15,9 @@ body {
   min-height: inherit;
 }
 .navbar-wrapper .navbar .container .agenda, .navbar-wrapper .navbar .container .news, .navbar-wrapper .navbar .container .add {
-  font-size: 23px;
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
 }
 .navbar-wrapper .navbar .container .agenda a, .navbar-wrapper .navbar .container .news a, .navbar-wrapper .navbar .container .add a {
   padding-top: 10px;
@@ -26,7 +25,7 @@ body {
   color: white;
 }
 .navbar-wrapper .navbar .container .agenda a img, .navbar-wrapper .navbar .container .news a img, .navbar-wrapper .navbar .container .add a img {
-  width: 28px;
+  width: 26px;
   vertical-align: -4px;
   margin-right: 2px;
 }
@@ -40,13 +39,18 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
   filter: alpha(opacity=70);
 }
+.navbar-wrapper .navbar .container .agenda, .navbar-wrapper .navbar .container .news {
+  font-weight: 100;
+}
+.navbar-wrapper .navbar .container .add {
+  font-weight: 600;
+}
 .navbar-wrapper > .container-fluid {
   padding-right: 0;
   padding-left: 0;
 }
 .carousel {
-  height: 540px;
-  margin-bottom: 60px;
+  height: 530px;
 }
 .carousel .item {
   height: 500px;
