@@ -1,4 +1,10 @@
 angular.module('CreativeApp').controller('EntriesIndexCtrl', ($scope, $http) ->
+  reloadMasonry = ->
+    container = document.querySelector('.entries');
+    msnry = new Masonry(container, {
+      itemSelector: '.entry'
+    })
+
   reload = ->
     $http.get('/entries.json').then((response) ->
       $scope.entries = response.data
@@ -13,15 +19,11 @@ angular.module('CreativeApp').controller('EntriesIndexCtrl', ($scope, $http) ->
       $scope.entries.push({ title: "heqsdfsdlfjsp doqfij pqsodfj opqsdfllo" })
       $scope.entries.push({ title: "held sdfojqsp foijsqdopfj sqdopj flo" })
       $scope.entries.push({ title: "helqsdflo" })
+      setTimeout( (-> reloadMasonry()), 500)
     )
 
   init = ->
     reload()
-
-    container = document.querySelector('.entries');
-    msnry = new Masonry(container, {
-      itemSelector: '.entry',
-    });
 
   $ ->
     init()
