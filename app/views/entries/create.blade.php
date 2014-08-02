@@ -12,7 +12,7 @@
     @endif
 
     <div class="form-group">
-      <% Form::label('author_name', 'Nom', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('author_name', 'Votre nom', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::text('author_name', '', ['class' => "form-control"]); %>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('author_email', 'Email', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('author_email', 'Votre email', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::text('author_email', '', ['class' => "form-control"]); %>
@@ -52,14 +52,6 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('url', 'Lien internet', ['class' => "control-label col-sm-4"]); %>
-
-      <div class="col-sm-5">
-        <% Form::text('url', '', ['class' => "form-control"]); %>
-      </div>
-    </div>
-
-    <div class="form-group">
       <% Form::label('picture', 'Image', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
@@ -81,6 +73,14 @@
 
         <div class="col-sm-5">
           <% Form::text('end_date', '', ['class' => 'form-control datepicker']); %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <% Form::label('url', 'Lien internet', ['class' => "control-label col-sm-4"]); %>
+
+        <div class="col-sm-5">
+          <% Form::text('url', '', ['class' => "form-control"]); %>
         </div>
       </div>
     </div>
