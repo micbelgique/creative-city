@@ -19,7 +19,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body ng-app="CreativeApp">
+  <body ng-app="CreativeApp" ng-controller="EntriesIndexCtrl">
     <div class="navbar-wrapper">
       <div class="container-fluid">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -81,8 +81,6 @@
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap-3.2.0.min.js"></script>
     <script src="/js/masonry-3.1.5.min.js"></script>
-    <script src="/js/angular-1.2.21.min.js"></script>
-    <script src="/js/app.js"></script>
     <script src="/js/entries-index.js"></script>
   </body>
 </html>
