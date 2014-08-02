@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CreativeMons</title>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,300,400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,100,300,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/compiled-css/bootstrap-3.2.0.min.css">
     <link rel="stylesheet" href="/compiled-css/theme.css">
     <link rel="stylesheet" href="/compiled-css/header.css">
+    <link rel="stylesheet" href="/compiled-css/entries-index.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,8 +80,8 @@
 
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap-3.2.0.min.js"></script>
+    <script src="/js/masonry-3.1.5.min.js"></script>
     <script src="/js/angular-1.2.21.min.js"></script>
-    <script src="/js/angular-masonry.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/entries-index.js"></script>
   </body>

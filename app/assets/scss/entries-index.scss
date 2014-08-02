@@ -1,0 +1,19 @@
+.entries {
+  .entry {
+    .inner-entry {
+      background-color: #00a0db;
+      margin: 0px;
+
+      img {
+        width: 100%;
+        height: 210px;
+      }
+
+      h2 {
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

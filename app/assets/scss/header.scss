@@ -17,10 +17,9 @@ body {
 
     .container {
       .agenda, .news, .add {
-        font-size: 23px;
+        font-size: 20px;
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
-        font-weight: 700;
 
         a {
           padding-top: 10px;
@@ -28,7 +27,7 @@ body {
           color: white;
 
           img {
-            width: 28px;
+            width: 26px;
             vertical-align: -4px;
             margin-right: 2px;
           }
@@ -46,6 +45,14 @@ body {
           filter:alpha(opacity=70);
         }
       }
+
+      .agenda, .news {
+        font-weight: 100;
+      }
+
+      .add {
+        font-weight: 600;
+      }
     }
   }
 }
@@ -56,8 +63,7 @@ body {
 }
 
 .carousel {
-  height: 540px;
-  margin-bottom: 60px;
+  height: 530px;
 
   .item {
     height: 500px;
