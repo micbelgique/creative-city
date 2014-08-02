@@ -3,6 +3,7 @@
 @section('content')
 
   <div>
+    <h1><% $blah %></h1>
     <h1><% $entry->title %></h1>
     <div>
       <% $entry->content %>

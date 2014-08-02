@@ -21,7 +21,8 @@ class EntryController extends BaseController {
     $entry = Entry::find($id);
 
     if($entry) {
-      return View::make('entries.show')->with('entry', $entry);
+      return View::make('entries.show')->with('entry', $entry)
+                                       ->with('blah', Cookie::get('user_token'));
     } else {
       App::abort(404);
     }
@@ -38,6 +39,7 @@ class EntryController extends BaseController {
                                        ->with('votes_count', $entry->votes()->count())
                                        ->with('positive_votes', $positive_votes)
                                        ->with('negative_votes', $negative_votes)
+                                       ->with('blah', Cookie::get('user_token'))
                                        ->with('is_author', true);
 
     } else {
