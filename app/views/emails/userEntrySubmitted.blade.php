@@ -17,7 +17,7 @@
     </div>
 
     <div>
-      <% link_to_route('entries.showAsVoter', null, [ $entry->id, 'user_token' => $user->token ], []); %>
+      <% link_to_route('entries.showAsVoter', null, [ $entry->id, 'voter_token' => $user->token ], []); %>
     </div>
 
   </body>

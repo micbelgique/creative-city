@@ -52,8 +52,8 @@ class EntryController extends BaseController {
 
       return View::make('entries.show')->with('entry', $entry)
                                        ->with('votes_count', $entry->votes()->count())
-                                       ->with('positive_votes', $positive_votes)
-                                       ->with('negative_votes', $negative_votes)
+                                       ->with('positiveVotes', $positiveVotes)
+                                       ->with('negativeVotes', $negativeVotes)
                                        ->with('is_author', true);
 
     } else {
