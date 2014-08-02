@@ -28,13 +28,13 @@
             <div class="nav navbar-nav pull-left">
               <ul class="nav navbar-nav pull-right">
                 <li class="agenda">
-                  <a href="/entries#content-anchor">
+                  <a href="/entries/#content-anchor">
                     <img src="/images/calendar.png">
                     Agenda
                   </a>
                 </li>
                 <li class="news">
-                  <a href="/entries#content-anchor">
+                  <a href="/entries/#content-anchor">
                     <img src="/images/news.png">
                     News
                   </a>

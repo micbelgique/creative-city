@@ -3,13 +3,13 @@
 @section('content')
   <% Form::model($entry, ['route' => array('entries.store'), 'files' => true, 'class' => "form-horizontal new-article"]) %>
 
-    <div class="errors col-sm-offset-4 col-sm-5">
-      @if($errors->has())
+    @if($errors->has())
+      <div class="errors col-sm-offset-4 col-sm-5">
         @foreach ($errors->all() as $error)
           <div><% $error %></div>
         @endforeach
-      @endif
-    </div>
+      </div>
+    @endif
 
     <div class="form-group">
       <% Form::label('author_name', 'Nom', ['class' => "control-label col-sm-4"]); %>
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div id="events-only">
+    <div id="events-only" style="display: none;">
       <div class="form-group">
         <% Form::label('start_date', 'Date de début', ['class' => "control-label col-sm-4"]); %>
 

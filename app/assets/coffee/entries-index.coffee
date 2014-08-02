@@ -58,6 +58,5 @@ $ ->
     bindAgenda()
     bindNews()
 
-  $ ->
-    if $('.entries').length
-      init()
+  if $('.entries').length
+    init()
