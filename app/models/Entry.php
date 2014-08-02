@@ -16,7 +16,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   public function __construct(array $attributes = array()) {
     $this->hasAttachedFile('picture', [
         'styles' => [
-          'medium' => '300x300',
+          'medium' => '360x210',
           'thumb' => '100x100'
         ]
     ]);
@@ -56,7 +56,8 @@ class Entry extends Eloquent implements StaplerableInterface {
       'content'     => $this->content,
       'author_name' => $this->author_name,
       'kind'        => $this->kind,
-      'path'        => URL::route("entries.show", array($this->id))
+      'path'        => URL::route("entries.show", array($this->id)),
+      'picture_url' => $this->picture->url('medium')
     ];
   }
 }

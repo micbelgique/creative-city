@@ -10,7 +10,8 @@ class EntryTableSeeder extends Seeder {
                              'author_email' => 'tulipe.moutarde@gmail.com',
                              'kind'         => 'article' ]);
 
-    $entry->picture = 'app/database/seeds/pictures/1.jpg';
+    copy('app/database/seeds/pictures/1.jpg', 'app/database/seeds/pictures/1b.jpg');
+    $entry->picture = 'app/database/seeds/pictures/1b.jpg';
     $entry->save();
 
     $entry = Entry::create([ 'title'        => 'Ta soeur',
@@ -19,7 +20,8 @@ class EntryTableSeeder extends Seeder {
                              'author_email' => 'aurelien.malisart@gmail.com',
                              'kind'         => 'article' ]);
 
-    $entry->picture = 'app/database/seeds/pictures/2.jpg';
+    copy('app/database/seeds/pictures/2.jpg', 'app/database/seeds/pictures/2b.jpg');
+    $entry->picture = 'app/database/seeds/pictures/2b.jpg';
     $entry->save();
 
     $entry = Entry::create([ 'title'        => 'Ton frère',
@@ -28,7 +30,8 @@ class EntryTableSeeder extends Seeder {
                              'author_email' => 'michael.hoste@gmail.com',
                              'kind'         => 'article' ]);
 
-    $entry->picture = 'app/database/seeds/pictures/3.jpg';
+    copy('app/database/seeds/pictures/3.jpg', 'app/database/seeds/pictures/3b.jpg');
+    $entry->picture = 'app/database/seeds/pictures/3b.jpg';
     $entry->save();
   }
 
