@@ -17,8 +17,8 @@
       @if($entry->hasVoted($voter))
         <h3>T'AS DEJA VOTE CONNARD</h3>
       @else
-        <% link_to_route('entries.voteUp', 'VoteUPPPP', [ $entry->id ]); %> <br/>
-        <% link_to_route('entries.voteDown', 'VoteDOWN', [ $entry->id ]); %>
+        <% link_to_route('entries.voteUp',   'VoteUPPPP', [ $entry->id ]); %> <br/>
+        <% link_to_route('entries.voteDown', 'VoteDOWN',  [ $entry->id ]); %>
 
       @endif
     </div>
@@ -32,10 +32,10 @@
       Nombre total de votes: <% $votes_count %>
 
 
-      @if($positive_votes->count() > 0)
+      @if($positiveVotes->count() > 0)
         <h3>Votes positifs</h3>
         <ul>
-          @foreach ($positive_votes->get() as $vote)
+          @foreach ($positiveVotes->get() as $vote)
             <li><% $vote->user->name %></li>
           @endforeach
         </ul>
@@ -44,10 +44,10 @@
       @endif
 
 
-      @if($negative_votes->count() > 0)
+      @if($negativeVotes->count() > 0)
         <h3>Votes négatifs</h3>
         <ul>
-          @foreach ($negative_votes->get() as $vote)
+          @foreach ($negativeVotes->get() as $vote)
             <li><% $vote->user->name %></li>
           @endforeach
         </ul>

@@ -17,7 +17,10 @@ class EntryController extends BaseController {
   }
 
   public function index() {
-    $entries = Entry::all();
+    $entries = Entry::all()->filter(function($entry){
+      return $entry->isPublished();
+    });
+
     return View::make('entries.index')->with('entries', $entries);
   }
 
@@ -44,8 +47,8 @@ class EntryController extends BaseController {
   public function showAsAuthor($token) {
     $entry = Entry::where('token', '=', $token)->first();
     if($entry){
-      $positive_votes = $entry->votes()->where('up', '=', true);
-      $negative_votes = $entry->votes()->where('up', '=', false);
+      $positiveVotes = $entry->upVotes();
+      $negativeVotes = $entry->downVotes();
 
       return View::make('entries.show')->with('entry', $entry)
                                        ->with('votes_count', $entry->votes()->count())

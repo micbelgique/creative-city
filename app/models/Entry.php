@@ -85,8 +85,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function isPublished() {
-    return $this->upVotes()->count() >= 3 &&
-           $this->downVotes()->count() =< 2;
+    return $this->upVotes()->count() >= 3 && $this->downVotes()->count() <= 2;
   }
 
   public function asJson() {
