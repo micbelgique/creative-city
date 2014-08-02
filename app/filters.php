@@ -13,11 +13,9 @@
 
 App::before(function($request) {});
 
-
 App::after(function($request, $response) {
 		if(Input::get('user_token')) {
-			//Cookie::queue('user_token', Input::get('user_token'), 120);
-			$response->withCookie(Cookie::make('user_token', Input::get('user_token'), 120));
+			$response->withCookie(Cookie::forever('user_token', Input::get('user_token')));
 		}
 });
 
@@ -80,13 +78,9 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::token() != Input::get('_token'))
-	{
+Route::filter('csrf', function() {
+	if (Session::token() != Input::get('_token')){
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
 
-Route::filter('storeToken', function() {
-});

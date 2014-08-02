@@ -2,6 +2,21 @@
 
 class EntryController extends BaseController {
 
+
+  private function getUserToken() {
+    $userToken = Input::get('user_token');
+
+    if($userToken == null) {
+      $userToken = Cookie::get('user_token');
+    }
+
+    if($userToken == null) {
+      App::abort(403);
+    }
+
+    return $userToken;
+  }
+
   public function index() {
     $entries = Entry::all();
     return View::make('entries.index')->with('entries', $entries);
@@ -21,12 +36,10 @@ class EntryController extends BaseController {
     $entry = Entry::find($id);
 
     if($entry) {
-      return View::make('entries.show')->with('entry', $entry)
-                                       ->with('blah', Cookie::get('user_token'));
+      return View::make('entries.show')->with('entry', $entry);
     } else {
       App::abort(404);
     }
-
   }
 
   public function showAsAuthor($token) {
@@ -39,7 +52,6 @@ class EntryController extends BaseController {
                                        ->with('votes_count', $entry->votes()->count())
                                        ->with('positive_votes', $positive_votes)
                                        ->with('negative_votes', $negative_votes)
-                                       ->with('blah', Cookie::get('user_token'))
                                        ->with('is_author', true);
 
     } else {
@@ -48,13 +60,16 @@ class EntryController extends BaseController {
   }
 
   public function showAsVoter($id) {
-    $voter = User::where('token', '=', Cookie::get('user_token'));
+    $userToken = $this->getUserToken();
+    $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
+
+
+    // dd($voter);
 
     if($voter && $entry){
       return View::make('entries.show')->with('entry', $entry)
-                                       ->with('voter', $voter)
-                                       ->with('is_voter', true);
+                                       ->with('voter', $voter);
     } else {
       App::abort(404);
     }
@@ -109,24 +124,26 @@ class EntryController extends BaseController {
   }
 
   public function voteUp($id) {
-    $voter = User::where('token', '=', Cookie::get('user_token'));
+    $userToken = $this->getUserToken();
+    $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      $entry->voteUp($user);
-      return Redirect::route('entries.showAsVoter', [ $token, $id ]);
+      $entry->voteUp($voter);
+      return Redirect::route('entries.showAsVoter', [$id]);
     } else {
       App::abort(404);
     }
   }
 
   public function voteDown($id) {
-    $voter = User::where('token', '=', Cookie::get('user_token'));
+    $userToken = $this->getUserToken();
+    $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
 
     if($voter && $entry){
-      $entry->voteDown($user);
-      return Redirect::route('entries.showAsVoter', [ $token, $id ]);
+      $entry->voteDown($voter);
+      return Redirect::route('entries.showAsVoter', [$id]);
     } else {
       App::abort(404);
     }

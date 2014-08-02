@@ -3,7 +3,6 @@
 @section('content')
 
   <div>
-    <h1><% $blah %></h1>
     <h1><% $entry->title %></h1>
     <div>
       <% $entry->content %>
@@ -11,6 +10,19 @@
 
       <img src="<?= $entry->picture->url('medium') ?>" >
   </div>
+
+  @if(isset($voter))
+    <div>
+
+      @if($entry->hasVoted($voter))
+        <h3>T'AS DEJA VOTE CONNARD</h3>
+      @else
+        <% link_to_route('entries.voteUp', 'VoteUPPPP', [ $entry->id ]); %> <br/>
+        <% link_to_route('entries.voteDown', 'VoteDOWN', [ $entry->id ]); %>
+
+      @endif
+    </div>
+  @endif
 
 
   @if(isset($is_author) && $is_author)

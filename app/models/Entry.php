@@ -32,14 +32,14 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function voteUp($user) {
-    if(!hasVoted($user)){
+    if(!$this->hasVoted($user)){
       $vote = new Vote([ 'user_id' => $user->id, 'up' => true ]);
       $this->votes()->save($vote);
     }
   }
 
   public function voteDown($user) {
-    if(!hasVoted($user)){
+    if(!$this->hasVoted($user)){
       $vote = new Vote([ 'user_id' => $user->id, 'up' => false ]);
       $this->votes()->save($vote);
     }
