@@ -8,6 +8,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,100,300,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/compiled-css/bootstrap-3.2.0.min.css">
+    <link rel="stylesheet" href="/compiled-css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="/compiled-css/theme.css">
     <link rel="stylesheet" href="/compiled-css/header.css">
     <link rel="stylesheet" href="/compiled-css/entries-index.css">
@@ -69,7 +70,10 @@
       </div>
     </div>
 
-    <a id="content-anchor" style="display: block; position: relative; top: -80px; visibility: hidden;"></a>
+    <a id="content-anchor"></a>
+
+    <div class="row red-bar">
+    </div>
 
     <div class="container marketing">
       <div class="row">
@@ -78,13 +82,15 @@
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2014 CreativeMons &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </div>
 
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap-3.2.0.min.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/js/masonry-3.1.5.min.js"></script>
     <script src="/js/entries-index.js"></script>
+    <script src="/js/entries-create.js"></script>
   </body>
 </html>
