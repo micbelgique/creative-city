@@ -27,13 +27,13 @@
             <div class="nav navbar-nav pull-left">
               <ul class="nav navbar-nav pull-right">
                 <li class="agenda">
-                  <a href="#content">
+                  <a href="/entries#content-anchor">
                     <img src="/images/calendar.png">
                     Agenda
                   </a>
                 </li>
                 <li class="news">
-                  <a href="#content">
+                  <a href="/entries#content-anchor">
                     <img src="/images/news.png">
                     News
                   </a>
@@ -60,14 +60,18 @@
         <div class="item active">
           <div class="container">
             <div class="carousel-caption">
-              <img src="/images/logo.png"/>
+              <a href="/">
+                <img src="/images/logo.png"/>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container marketing" id="content">
+    <a id="content-anchor" style="display: block; position: relative; top: -80px; visibility: hidden;"></a>
+
+    <div class="container marketing">
       <div class="row">
         @yield('content')
       </div>
