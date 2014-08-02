@@ -14,8 +14,8 @@
 App::before(function($request) {});
 
 App::after(function($request, $response) {
-		if(Input::get('user_token')) {
-			$response->withCookie(Cookie::forever('user_token', Input::get('user_token')));
+		if(Input::get('voter_token')) {
+			$response->withCookie(Cookie::forever('voter_token', Input::get('voter_token')));
 		}
 });
 

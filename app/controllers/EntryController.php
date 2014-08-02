@@ -4,10 +4,10 @@ class EntryController extends BaseController {
 
 
   private function getUserToken() {
-    $userToken = Input::get('user_token');
+    $userToken = Input::get('voter_token');
 
     if($userToken == null) {
-      $userToken = Cookie::get('user_token');
+      $userToken = Cookie::get('voter_token');
     }
 
     if($userToken == null) {
@@ -93,9 +93,6 @@ class EntryController extends BaseController {
 
     if($input['kind'] == "event") {
       $rules['start_date'] = 'required';
-    } else {
-      unset($input['start_date']);
-      unset($input['end_date']);
     }
 
     $validator = Validator::make($input, $rules);
@@ -107,19 +104,8 @@ class EntryController extends BaseController {
     }
     else {
       if($entry->save()) {
-        Mail::send('emails.authorEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
-          $subject = 'Votre article a été soumis';
-          $message->to($entry->author_email, $entry->author_name)->subject($subject);
-        });
-
-        foreach(User::all() as $user) {
-          Mail::send('emails.userEntrySubmitted', [ 'entry' => $entry, 'user' => $user ], function($message) use ($user, $entry) {
-            $subject = 'Action requise: un article a été posté sur Creative Mons';
-            $message->to($user->email, $user->name)
-                    ->subject($subject);
-          });
-        }
-
+        $entry->notifyAuthor();
+        $entry->notifyUsers();
         return Redirect::route('entries.index');
       } else {
         return "Impossible de créer l'article/évènement.";
