@@ -1,11 +1,10 @@
 <?php
-
 // http://scotch.io/bar-talk/quick-tip-using-laravel-blade-with-angularjs
 Blade::setContentTags('<%', '%>');          // for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>'); // for escaped data
 
-
 Route::get('/', [ 'as' => 'root', 'uses' => 'EntryController@index' ]);
+Route::get('/thanks', [ 'as' => 'thanks', 'uses' => 'HomeController@showThanks']);
 
 Route::resource('entries', 'EntryController');
 

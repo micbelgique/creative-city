@@ -122,7 +122,7 @@ class EntryController extends BaseController {
       if($entry->save()) {
         $entry->notifyAuthor();
         $entry->notifyUsers();
-        return Redirect::route('entries.index');
+        return Redirect::route('thanks');
       } else {
         return "Impossible de créer l'article/évènement.";
       }
