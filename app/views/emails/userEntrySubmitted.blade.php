@@ -18,9 +18,7 @@
     </div>
 
     <div>
-      Votre lien de vote: <a href="<% $entry->authorUrl() %>"><% $entry->authorUrl() %></a><br/>
-      Votez POUR directement: <a href="<% $entry->authorUrl() %>"><% $entry->authorUrl() %></a><br/>
-      Votez CONTRE directement: <a href="<% $entry->authorUrl() %>"><% $entry->authorUrl() %></a><br/>
+      <% link_to_route('entries.showAsVoter', null, [ $entry->id, 'user_token' => $user->token ], []); %>
     </div>
 
   </body>

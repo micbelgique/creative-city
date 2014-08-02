@@ -110,9 +110,10 @@ class EntryController extends BaseController {
         });
 
         foreach(User::all() as $user) {
-          Mail::send('emails.moderatorEntrySubmitted', [ 'entry' => $entry ], function($message) use ($user, $entry) {
+          Mail::send('emails.userEntrySubmitted', [ 'entry' => $entry, 'user' => $user ], function($message) use ($user, $entry) {
             $subject = 'Action requise: un article a été posté sur Creative Mons';
-            $message->to($user->email, $user->name)->subject($subject);
+            $message->to($user->email, $user->name)
+                    ->subject($subject);
           });
         }
 
