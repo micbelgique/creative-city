@@ -107,7 +107,8 @@ class EntryController extends BaseController {
     );
 
     if($input['kind'] == 'event') {
-      $rules['start_date'] = 'required';
+      $rules['start_date'] = 'required|date';
+      $rules['end_date']   = 'required|date';
     }
 
     $validator = Validator::make($input, $rules);
