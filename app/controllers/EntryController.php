@@ -7,6 +7,35 @@ class EntryController extends BaseController {
     return View::make('entries.index')->with('entries', $entries);
   }
 
+  public function indexJson() {
+    $entries = Entry::all();
+
+    $response = $entries->map(function($entry){
+      return $entry->asJson();
+    });
+
+    return Response::json($response);
+  }
+
+  public function show($id) {
+    $entry = Entry::find($id);
+    return View::make('entries.show')->with('entry', $entry);
+  }
+
+  public function showAsAuthor($token) {
+    $entry = Entry::where('token', '=', $token)->first();
+    if($entry){
+      return View::make('entries.show')->with('entry', $entry)
+                                       ->with('is_author', true);
+    } else {
+      App::abort(404);
+    }
+  }
+
+  public function showAsVoter() {
+
+  }
+
   public function create() {
     $entry = new Entry;
     return View::make('entries.create')->with('entry', $entry);
@@ -16,10 +45,11 @@ class EntryController extends BaseController {
     $input = Input::all();
 
     $rules = array(
-      'title'       => 'required',
-      'email'       => 'required|email',
-      'description' => 'required',
-      'kind'        => 'required|in:article,event'
+      'title'        => 'required',
+      'author_name'  => 'required',
+      'author_email' => 'required|email',
+      'content'      => 'required',
+      'kind'         => 'required|in:article,event'
     );
 
     $validator = Validator::make($input, $rules);
@@ -30,10 +60,23 @@ class EntryController extends BaseController {
                                          ->withErrors($validator);
     }
     else {
-      if($entry->save()){
+      if($entry->save()) {
+        Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($entry) {
+          $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+          $message->to($entry->author_email, $entry->author_name)->subject($subject);
+        });
+
+        foreach(User::all() as $user) {
+          Mail::send('emails.newEntrySubmitted', [ 'entry' => $entry ], function($message) use ($user, $entry) {
+            $subject = 'Un nouvel article/évènement de sa mère a été soumis';
+            $message->to($user->email, $user->name)->subject($subject);
+          });
+        }
+
         return Redirect::route('entries.index');
+      } else {
+        return "Impossible de créer l'article/évènement.";
       }
     }
-
   }
 }

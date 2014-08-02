@@ -4,9 +4,8 @@
   <% Form::model($entry, array('route' => array('entries.store'))) %>
 
     @if($errors->has())
-      CETTE PUTE
       @foreach ($errors->all() as $error)
-        <div>{{ $error }}</div>
+        <div><% $error %></div>
       @endforeach
     @endif
 
@@ -16,8 +15,8 @@
     </div>
 
     <div>
-      <% Form::label('description', 'Contenu'); %>
-      <% Form::textarea('description'); %>
+      <% Form::label('content', 'Contenu'); %>
+      <% Form::textarea('content'); %>
     </div>
 
     <div>

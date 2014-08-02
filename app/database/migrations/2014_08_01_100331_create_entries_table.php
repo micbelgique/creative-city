@@ -11,7 +11,7 @@ class CreateEntriesTable extends Migration {
         $table->string('token')->unique();
         $table->string('kind')->default('article');
         $table->string('title')->default('');
-        $table->text('description')->nullable();
+        $table->text('content')->nullable();
         $table->dateTime('start_date')->nullable();
         $table->dateTime('end_date')->nullable();
         $table->string('url')->default('');
