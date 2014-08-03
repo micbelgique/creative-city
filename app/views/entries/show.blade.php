@@ -20,9 +20,39 @@
     </div>
 
     <div class="col-lg-5">
+      @if($entry->kind == 'event')
+        <div class="link">
+          <div class="dates-icon">
+          </div>
+
+          <div class="dates-content">
+            <table>
+              <tr>
+                <td>Start</td>
+                <td>:</td>
+                <td><% date("d-m-Y — H:i", strtotime($entry->start_date)) %></td>
+              </tr>
+
+              <tr>
+                <td>End</td>
+                <td>:</td>
+                <td><% date("d-m-Y — H:i", strtotime($entry->end_date)) %></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      @endif
+
       @if($entry->url != '')
         <div class="link">
-          <% $entry->url %>
+          <div class="link-icon">
+          </div>
+
+          <div class="link-content">
+            <a href="<% $entry->url %>">
+              <% $entry->url %>
+            </a>
+          </div>
         </div>
       @endif
 
@@ -44,7 +74,7 @@
       <% $entry->author_name %>
 
       <div class="created_at">
-        23 janvier 2015
+        <% date("d-m-Y à H:i", strtotime($entry->created_at)) %>
       </div>
     </div>
 
