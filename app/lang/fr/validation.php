@@ -106,6 +106,7 @@ return array(
         "url" => "Site internet",
         "author_name" => "Nom",
         "author_email" => "E-mail",
+        "picture" => "Image",
 
         "name" => "Nom",
         "username" => "Pseudo",

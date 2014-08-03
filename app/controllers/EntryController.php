@@ -91,7 +91,7 @@ class EntryController extends BaseController {
       'title'        => 'required',
       'content'      => 'required',
       'author_name'  => 'required',
-      // 'picture'      => 'required',
+      'picture'      => 'required',
       'author_email' => 'required|email',
       'content'      => 'required',
       'kind'         => 'required|in:article,event'
