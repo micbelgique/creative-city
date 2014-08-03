@@ -12,7 +12,7 @@
     @endif
 
     <div class="form-group">
-      <% Form::label('author_name', 'Votre nom', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('author_name', 'Votre nom *', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::text('author_name', '', ['class' => "form-control"]); %>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('author_email', 'Votre email', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('author_email', 'Votre email *', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::text('author_email', '', ['class' => "form-control"]); %>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('title', 'Titre', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('title', 'Titre *', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::text('title', '', ['class' => "form-control"]); %>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('content', 'Contenu', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('content', 'Contenu *', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::textarea('content', '', ['class' => "form-control"]); %>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="form-group">
-      <% Form::label('picture', 'Image', ['class' => "control-label col-sm-4"]); %>
+      <% Form::label('picture', 'Image *', ['class' => "control-label col-sm-4"]); %>
 
       <div class="col-sm-5">
         <% Form::file('picture', '', ['class' => "form-control"]); %>
@@ -61,7 +61,7 @@
 
     <div id="events-only" style="display: none;">
       <div class="form-group">
-        <% Form::label('start_date', 'Date de début', ['class' => "control-label col-sm-4"]); %>
+        <% Form::label('start_date', 'Date de début *', ['class' => "control-label col-sm-4"]); %>
 
         <div class="col-sm-5">
           <% Form::text('start_date', '', ['class' => 'form-control datepicker']); %>
@@ -69,7 +69,7 @@
       </div>
 
       <div class="form-group">
-        <% Form::label('end_date', 'Date de fin', ['class' => "control-label col-sm-4"]); %>
+        <% Form::label('end_date', 'Date de fin *', ['class' => "control-label col-sm-4"]); %>
 
         <div class="col-sm-5">
           <% Form::text('end_date', '', ['class' => 'form-control datepicker']); %>

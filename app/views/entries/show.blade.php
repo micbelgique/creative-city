@@ -95,25 +95,6 @@
     @endif
 
     @if(isset($voter))
-
-      <hr>
-
-      <div>
-        @if($entry->hasVoted($voter))
-          <h3>Tu as déjà voté !</h3>
-        @else
-          <p>
-            Attention, le vote est définitif !
-          </p>
-          <p>
-            <% link_to_route('entries.voteUp',   'Accepter la publication de cette soumission', [ $entry->id ]); %> <br/>
-          <% link_to_route('entries.voteDown', 'Refuser la publication de cette soumission',  [ $entry->id ]); %>
-          </p>
-
-
-        @endif
-      </div>
-
       <% Form::model($comment, ['route' => array('comments.store'), 'class' => "form-horizontal new-article"]) %>
         <% Form::hidden('entry_id', $entry->id) %>
 
@@ -131,6 +112,23 @@
           </div>
         </div>
       <% Form::close() %>
+
+      <hr>
+
+      <div>
+        @if($entry->hasVoted($voter))
+          <h3>Tu as déjà voté !</h3>
+        @else
+          <p>
+            Attention, le vote est définitif !
+          </p>
+          <p>
+            <% link_to_route('entries.voteUp',   'Accepter la publication de cette soumission', [ $entry->id ]); %> <br/>
+          <% link_to_route('entries.voteDown', 'Refuser la publication de cette soumission',  [ $entry->id ]); %>
+          </p>
+        @endif
+      </div>
+
     @endif
 
     @if(isset($is_author) && $is_author)
