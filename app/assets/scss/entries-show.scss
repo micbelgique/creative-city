@@ -25,12 +25,52 @@
   .link {
     width: 100%;
     background-color: black;
-    padding: 20px;
+    height: 60px;
     color: white;
     margin-top: 34px;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 700
+    font-weight: 700;
+
+    .link-icon {
+      width: 60px;
+      height: 60px;
+      float:left;
+      background-image:url(/images/link.png);
+    }
+
+    .dates-icon {
+      width: 60px;
+      height: 60px;
+      float:left;
+      background-image:url(/images/oclock.png);
+    }
+
+    .link-content, .dates-content {
+      float:left;
+      width: 384px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      a {
+        color: white;
+      }
+    }
+
+    .link-content {
+      padding-top:20px;
+      padding-left:20px;
+    }
+
+    .dates-content {
+      padding-top:12px;
+      padding-left:20px;
+
+      td {
+        padding-right: 7px;
+      }
+    }
   }
 
   hr {

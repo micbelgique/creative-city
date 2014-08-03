@@ -19,6 +19,7 @@ class EntryTableSeeder extends Seeder {
                     'author_name'  => 'François Stephany',
                     'author_email' => 'tulipe.moutarde@gmail.com',
                     'kind'         => 'article',
+                    'url'          => 'http://tamere.eu',
                     'picture'      => 'app/database/seeds/pictures/1b.jpg' ]);
 
     Entry::create([ 'title'        => 'Ta soeur',
@@ -26,6 +27,7 @@ class EntryTableSeeder extends Seeder {
                     'author_name'  => 'Aurélien Malisart',
                     'author_email' => 'aurelien.malisart@gmail.com',
                     'kind'         => 'article',
+                    'url'          => 'http://www.tasoeur.biz',
                     'picture'      => 'app/database/seeds/pictures/2b.jpg' ]);
 
     Entry::create([ 'title'        => 'Un événement',
@@ -35,6 +37,7 @@ class EntryTableSeeder extends Seeder {
                     'kind'         => 'event',
                     'start_date'   => "2014-08-02",
                     'end_date'     => "2014-08-02",
+                    'url'          => 'http://www.pechakucha.org/cities/mons',
                     'picture'      => 'app/database/seeds/pictures/3b.jpg' ]);
 
     Entry::create([ 'title'        => 'Ton frère',
@@ -42,6 +45,7 @@ class EntryTableSeeder extends Seeder {
                     'author_name'  => 'Michaël Hoste',
                     'author_email' => 'michael.hoste@gmail.com',
                     'kind'         => 'article',
+                    'url'          => 'http://desencyclopedie.wikia.com/wiki/Ton_fr%C3%A8re',
                     'picture'      => 'app/database/seeds/pictures/4b.jpg' ]);
 
     Entry::create([ 'title'        => 'Pechakucha',
@@ -49,6 +53,7 @@ class EntryTableSeeder extends Seeder {
                     'author_name'  => 'Ruben Casad',
                     'author_email' => 'ruben.casad@gmail.com',
                     'kind'         => 'article',
+                    'url'          => 'http://www.pechakucha.org/',
                     'picture'      => 'app/database/seeds/pictures/5b.jpg' ]);
 
     Entry::create([ 'title'        => 'Barbecues 101',
@@ -58,6 +63,7 @@ class EntryTableSeeder extends Seeder {
                     'kind'         => 'event',
                     'start_date'   => "2014-08-02",
                     'end_date'     => "2014-08-02",
+                    'url'          => 'https://twitter.com/Meaweb',
                     'picture'      => 'app/database/seeds/pictures/6b.jpg' ]);
 
     Entry::create([ 'title'        => 'Cafés numériques',
@@ -67,6 +73,7 @@ class EntryTableSeeder extends Seeder {
                     'kind'         => 'event',
                     'start_date'   => "2014-08-02",
                     'end_date'     => "2014-08-02",
+                    'url'          => 'https://twitter.com/Meaweb',
                     'picture'      => 'app/database/seeds/pictures/7b.jpg' ]);
 
     Entry::create([ 'title'        => 'Rendez-vous du pixel',
@@ -76,6 +83,7 @@ class EntryTableSeeder extends Seeder {
                     'kind'         => 'event',
                     'start_date'   => "2014-08-02",
                     'end_date'     => "2014-08-02",
+                    'url'          => 'http://www.pixelsfestival.be/',
                     'picture'      => 'app/database/seeds/pictures/8b.jpg' ]);
   }
 

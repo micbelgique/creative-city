@@ -21,12 +21,45 @@
 .entries-show .link {
   width: 100%;
   background-color: black;
-  padding: 20px;
+  height: 60px;
   color: white;
   margin-top: 34px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
+}
+.entries-show .link .link-icon {
+  width: 60px;
+  height: 60px;
+  float: left;
+  background-image: url(/images/link.png);
+}
+.entries-show .link .dates-icon {
+  width: 60px;
+  height: 60px;
+  float: left;
+  background-image: url(/images/oclock.png);
+}
+.entries-show .link .link-content, .entries-show .link .dates-content {
+  float: left;
+  width: 384px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.entries-show .link .link-content a, .entries-show .link .dates-content a {
+  color: white;
+}
+.entries-show .link .link-content {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.entries-show .link .dates-content {
+  padding-top: 12px;
+  padding-left: 20px;
+}
+.entries-show .link .dates-content td {
+  padding-right: 7px;
 }
 .entries-show hr {
   border-color: black;
