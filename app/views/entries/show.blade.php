@@ -52,6 +52,14 @@ font-weight: 700">
   <br/><br/>
   <br/><br/>
 
+  @if(isset($is_author) || isset($voter))
+    <h3>Commentaires</h3>
+    @foreach($entry->comments as $comment)
+      <strong><% $comment->user->name %></strong><br />
+      <pre><% $comment->content %></pre>
+    @endforeach
+  @endif
+
   @if(isset($voter))
     <div>
       @if($entry->hasVoted($voter))
@@ -81,7 +89,6 @@ font-weight: 700">
     <% Form::close() %>
 
   @endif
-
 
   @if(isset($is_author) && $is_author)
     <div style="background-color: yellow;">
@@ -115,7 +122,6 @@ font-weight: 700">
 
     </div>
   @endif
-
 
   <% $entry->authorUrl() %>
 @stop

@@ -21,7 +21,7 @@ class CommentController extends BaseController {
     else {
       if($user->comments()->save($comment)) {
         $comment->notifyEntryAuthor();
-        return Redirect::route('thanks');
+        return Redirect::route('entries.showAsVoter', [ $comment->entry->id ]);
       } else {
         return "Impossible d'ajouter le commentaire.";
       }
