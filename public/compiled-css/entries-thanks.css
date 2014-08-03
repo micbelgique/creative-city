@@ -1,0 +1,16 @@
+.entries-thanks .thanks {
+  text-align: center;
+  font-size: 80px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.entries-thanks .thanks-content {
+  width: 500px;
+  margin: auto;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  font-size: 18px;
+}
