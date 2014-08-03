@@ -54,15 +54,32 @@ font-weight: 700">
 
   @if(isset($voter))
     <div>
-
       @if($entry->hasVoted($voter))
-        <h3>T'AS DEJA VOTE CONNARD</h3>
+        <h3>Vous avez déjà voté pour cette entrée.</h3>
       @else
         <% link_to_route('entries.voteUp',   'VoteUPPPP', [ $entry->id ]); %> <br/>
         <% link_to_route('entries.voteDown', 'VoteDOWN',  [ $entry->id ]); %>
-
       @endif
     </div>
+
+    <% Form::model($comment, ['route' => array('comments.store'), 'class' => "form-horizontal new-article"]) %>
+      <% Form::hidden('entry_id', $entry->id) %>
+
+      <div class="form-group">
+        <% Form::label('content', 'Contenu', ['class' => "control-label col-sm-4"]); %>
+
+        <div class="col-sm-5">
+          <% Form::textarea('content', '', ['class' => "form-control"]); %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-5">
+          <% Form::submit('Soumettre', ['class' => 'btn btn-default']) %>
+        </div>
+      </div>
+    <% Form::close() %>
+
   @endif
 
 

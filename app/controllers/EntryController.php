@@ -65,6 +65,8 @@ class EntryController extends BaseController {
     $userToken = $this->getUserToken();
     $voter = User::where('token', '=', $userToken)->first();
     $entry = Entry::find($id);
+    $comment = new Comment();
+    $comment->user = $voter;
 
     if($voter && $entry){
       return View::make('entries.show')->with('entry', $entry)
