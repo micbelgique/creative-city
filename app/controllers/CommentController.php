@@ -17,9 +17,10 @@ class CommentController extends BaseController {
     }
     else {
       if($comment->save()) {
+        $comment->notifyEntryAuthor();
         return Redirect::route('thanks');
       } else {
-        return "Impossible de créer le commentaire.";
+        return "Impossible d'ajouter le commentaire.";
       }
     }
   }

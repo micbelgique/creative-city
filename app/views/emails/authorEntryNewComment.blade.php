@@ -6,7 +6,11 @@
   <body>
     <div>
       <p>Bonjour,</p>
-      <p>Une personne a ajouté un vote à votre soumission "<% $entry->title %>".</p>
+      <p><strong><% $comment->user->name %></strong> a ajouté un commentaire à votre soumission "<% $entry->title %>".</p>
+
+      <pre>
+<% $comment->content %>
+      </pre>
 
       <p>
         Vous pouvez suivre l'évolution des votes et des commentaires sur le site à l'adresse suivante: <br/>
