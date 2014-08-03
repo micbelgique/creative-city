@@ -1,6 +1,6 @@
 $ ->
   init = ->
-    $('.datepicker').datetimepicker({format: 'dd-mm-yyyy hh:ii'});
+    $('.datepicker').datetimepicker({format: 'yyyy-mm-dd hh:ii:ss'});
 
   toggleFields = ->
     if $('select#kind').val() == 'event'
