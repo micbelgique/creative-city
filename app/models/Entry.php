@@ -16,8 +16,8 @@ class Entry extends Eloquent implements StaplerableInterface {
   public function __construct(array $attributes = array()) {
     $this->hasAttachedFile('picture', [
         'styles' => [
-          'large'  => '1140x550',
-          'medium' => '360x210',
+          'large'  => '1140x550#',
+          'medium' => '360x210#',
           'thumb'  => '100x100'
         ]
     ]);
