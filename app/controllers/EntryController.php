@@ -107,8 +107,10 @@ class EntryController extends BaseController {
     $entry     = new Entry($input);
 
     if($validator->fails()) {
-      return View::make('entries.create')->with('entry', $entry)
-                                         ->withErrors($validator);
+      //return View::make('entries.create')->with('entry', $entry)
+      return Redirect::back()->with('entry', $entry)
+                             ->withErrors($validator)
+                             ->withInput($input);
     }
     else {
       if($entry->save()) {
