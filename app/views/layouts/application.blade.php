@@ -89,7 +89,7 @@
     <footer>
       Made with <span class="love">&#9825;</span> by
 
-      <br/><br/><br/>
+      <br/><br/>
 
       <a href="/">
         <img src="/images/logo-black.png"/>
