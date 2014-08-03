@@ -7,6 +7,7 @@ Route::get('/', [ 'as' => 'root', 'uses' => 'EntryController@index' ]);
 Route::get('/thanks', [ 'as' => 'thanks', 'uses' => 'HomeController@showThanks']);
 
 Route::resource('entries', 'EntryController');
+Route::resource('comments', 'CommentController');
 
 Route::get('/entries.json',           [ 'as' => 'entries.indexJson',    'uses' => 'EntryController@indexJson'    ]);
 Route::get('/author/entries/{token}', [ 'as' => 'entries.showAsAuthor', 'uses' => 'EntryController@showAsAuthor' ]);

@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Europe/Brussels',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,6 +54,7 @@ return array(
 
 	'locale' => 'fr',
 
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Fallback Locale
@@ -65,7 +66,7 @@ return array(
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'fr',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +123,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
     'VTalbot\Coffee\CoffeeServiceProvider',
-    'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider'
+    'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
+    'Jenssegers\Date\DateServiceProvider',
 	),
 
 	/*
@@ -190,6 +192,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
     'Coffee'          => 'VTalbot\Coffee\Facades\Coffee',
+    'Date'            => 'Jenssegers\Date\Date',
 
 	),
 
