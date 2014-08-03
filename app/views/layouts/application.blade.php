@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/compiled-css/header.css">
     <link rel="stylesheet" href="/compiled-css/entries-index.css">
     <link rel="stylesheet" href="/compiled-css/entries-show.css">
+    <link rel="stylesheet" href="/compiled-css/entries-thanks.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +47,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li class="add">
                   <a href="<% URL::route('entries.create') %>">
-                    Soumettre une actualité
+                    Soumettre une publication
                     <i class="glyphicon glyphicon-plus"></i>
                   </a>
                 </li>
@@ -88,7 +89,7 @@
     <footer>
       Made with <span class="love">&#9825;</span> by
 
-      <br/><br/><br/>
+      <br/><br/>
 
       <a href="/">
         <img src="/images/logo-black.png"/>
