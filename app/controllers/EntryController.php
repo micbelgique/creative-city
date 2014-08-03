@@ -55,9 +55,10 @@ class EntryController extends BaseController {
     $comment->user = $voter;
 
     if($voter && $entry){
-      return View::make('entries.show')->with('entry', $entry)
-                                       ->with('comment', $comment)
-                                       ->with('voter', $voter);
+      return View::make('entries.show')->with('entry',       $entry)
+                                       ->with('comment',     $comment)
+                                       ->with('voter',       $voter)
+                                       ->with('votes_count', $entry->votes()->count());
     } else {
       App::abort(404);
     }

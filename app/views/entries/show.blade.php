@@ -86,6 +86,36 @@
     <br/><br/>
 
     @if(isset($is_author) || isset($voter))
+      <div style="background-color: yellow;">
+        Nombre total de votes: <% $votes_count %>
+
+        @if($entry->upVotes()->count() > 0)
+          <h3>Votes positifs</h3>
+          <ul>
+            @foreach ($entry->upVotes()->get() as $vote)
+              <li><% $vote->user->name %></li>
+            @endforeach
+          </ul>
+        @else
+          <h3>Il n'y a pas de vote positif</h3>
+        @endif
+
+
+        @if($entry->downVotes()->count() > 0)
+          <h3>Votes négatifs</h3>
+          <ul>
+            @foreach ($entry->downVotes()->get() as $vote)
+              <li><% $vote->user->name %></li>
+            @endforeach
+          </ul>
+        @else
+          <h3>Il n'y a pas de vote négatifs</h3>
+        @endif
+
+      </div>
+    @endif
+
+    @if(isset($is_author) || isset($voter))
       <h3>Commentaires</h3>
       @foreach($entry->comments as $comment)
         <strong><% $comment->user->name %></strong> (<% date("d/m/Y h:i", strtotime($comment->created_at)) %>)<br />
@@ -124,43 +154,11 @@
           </p>
           <p>
             <% link_to_route('entries.voteUp',   'Accepter la publication de cette soumission', [ $entry->id ]); %> <br/>
-          <% link_to_route('entries.voteDown', 'Refuser la publication de cette soumission',  [ $entry->id ]); %>
+            <% link_to_route('entries.voteDown', 'Refuser la publication de cette soumission',  [ $entry->id ]); %>
           </p>
         @endif
       </div>
 
-    @endif
-
-    @if(isset($is_author) && $is_author)
-      <div style="background-color: yellow;">
-        <h2>PRIVATE PANEL:</h2>
-
-        Nombre total de votes: <% $votes_count %>
-
-        @if($positiveVotes->count() > 0)
-          <h3>Votes positifs</h3>
-          <ul>
-            @foreach ($positiveVotes->get() as $vote)
-              <li><% $vote->user->name %></li>
-            @endforeach
-          </ul>
-        @else
-          <h3>Il n'y a pas de vote positif</h3>
-        @endif
-
-
-        @if($negativeVotes->count() > 0)
-          <h3>Votes négatifs</h3>
-          <ul>
-            @foreach ($negativeVotes->get() as $vote)
-              <li><% $vote->user->name %></li>
-            @endforeach
-          </ul>
-        @else
-          <h3>Il n'y a pas de vote négatifs</h3>
-        @endif
-
-      </div>
     @endif
   </div>
 @stop
