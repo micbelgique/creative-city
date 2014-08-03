@@ -80,12 +80,20 @@
       <div class="row">
         @yield('content')
       </div>
-
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 CreativeMons &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
     </div>
+
+    <div class="row red-bar-2">
+    </div>
+
+    <footer>
+      Made with <span class="love">&#9825;</span> by
+
+      <br/><br/><br/>
+
+      <a href="/">
+        <img src="/images/logo-black.png"/>
+      </a>
+    </footer>
 
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap-3.2.0.min.js"></script>

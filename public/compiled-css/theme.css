@@ -23,6 +23,12 @@
   margin-right: 0px;
   margin-left: 0px;
 }
+.red-bar-2 {
+  background-color: #e53953;
+  height: 7px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
 .form-control {
   background-color: #eee;
 }
@@ -46,4 +52,17 @@
 .btn-default:hover {
   background-color: #a53445;
   color: white;
+}
+footer {
+  background-color: #121923;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+footer .love {
+  color: #e53953;
+  font-weight: bold;
+}
+footer a .img {
+  vertical-align: -9px;
 }

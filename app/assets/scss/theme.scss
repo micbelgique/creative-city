@@ -30,6 +30,13 @@
   margin-left: 0px;
 }
 
+.red-bar-2 {
+  background-color: #e53953;
+  height: 7px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
 .form-control {
   background-color: #EEEEEE;
 }
@@ -57,6 +64,22 @@
 .btn-default:hover {
   background-color: #A53445;
   color: white;
+}
+
+footer {
+  background-color: #121923;
+  text-align:center;
+  padding-top: 40px;
+  padding-bottom:40px;
+
+  .love {
+    color:#e53953;
+    font-weight:bold;
+  }
+
+  a .img {
+    vertical-align: -9px;
+  }
 }
 
 @media (min-width: 768px) {
