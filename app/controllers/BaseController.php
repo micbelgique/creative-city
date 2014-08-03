@@ -2,6 +2,20 @@
 
 class BaseController extends Controller {
 
+	public function getUserToken() {
+    $userToken = Input::get('voter_token');
+
+    if($userToken == null) {
+      $userToken = Cookie::get('voter_token');
+    }
+
+    if($userToken == null) {
+      App::abort(403);
+    }
+
+    return $userToken;
+  }
+
 	/**
 	 * Setup the layout used by the controller.
 	 *

@@ -13,11 +13,12 @@ class Comment extends Eloquent {
   }
 
   public function notifyEntryAuthor() {
-    $entry = $this->entry();
+    $entry = $this->entry;
 
     Mail::send('emails.authorEntryNewComment', [ 'entry' => $entry, 'comment' => $this ], function($message) use ($entry) {
       $subject = 'Nouveau commentaire sur votre article';
-      $message->to($entry->author_email, $entry->author_name)->subject($subject);
+      $message->to($entry->author_email, $entry->author_name)
+              ->subject($subject);
     });
   }
 }

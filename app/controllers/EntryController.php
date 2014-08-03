@@ -1,21 +1,6 @@
 <?php
 
 class EntryController extends BaseController {
-
-  private function getUserToken() {
-    $userToken = Input::get('voter_token');
-
-    if($userToken == null) {
-      $userToken = Cookie::get('voter_token');
-    }
-
-    if($userToken == null) {
-      App::abort(403);
-    }
-
-    return $userToken;
-  }
-
   public function index() {
     $entries = Entry::all()->filter(function($entry){
       return $entry->isPublished();
@@ -70,6 +55,7 @@ class EntryController extends BaseController {
 
     if($voter && $entry){
       return View::make('entries.show')->with('entry', $entry)
+                                       ->with('comment', $comment)
                                        ->with('voter', $voter);
     } else {
       App::abort(404);

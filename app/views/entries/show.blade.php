@@ -66,7 +66,7 @@ font-weight: 700">
       <% Form::hidden('entry_id', $entry->id) %>
 
       <div class="form-group">
-        <% Form::label('content', 'Contenu', ['class' => "control-label col-sm-4"]); %>
+        <% Form::label('content', 'Votre commentaire', ['class' => "control-label col-sm-4"]); %>
 
         <div class="col-sm-5">
           <% Form::textarea('content', '', ['class' => "form-control"]); %>
@@ -75,7 +75,7 @@ font-weight: 700">
 
       <div class="form-group">
         <div class="col-sm-offset-4 col-sm-5">
-          <% Form::submit('Soumettre', ['class' => 'btn btn-default']) %>
+          <% Form::submit('Soumettre le commentaire', ['class' => 'btn btn-default']) %>
         </div>
       </div>
     <% Form::close() %>

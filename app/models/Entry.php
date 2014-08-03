@@ -24,6 +24,10 @@ class Entry extends Eloquent implements StaplerableInterface {
     parent::__construct($attributes);
   }
 
+  public function comments() {
+    return $this->hasMany('Comment');
+  }
+
   public function votes() {
     return $this->hasMany('Vote');
   }
