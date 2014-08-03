@@ -80,8 +80,6 @@ class EntryController extends BaseController {
   }
 
   public function store() {
-    #$input = Input::all();
-
     $input = [
       'kind'         => Input::get('kind'),
       'title'        => Input::get('title'),

@@ -75,13 +75,13 @@
           <% Form::text('end_date', '', ['class' => 'form-control datepicker']); %>
         </div>
       </div>
+    </div>
 
-      <div class="form-group">
-        <% Form::label('url', 'Lien internet', ['class' => "control-label col-sm-4"]); %>
+    <div class="form-group">
+      <% Form::label('url', 'Lien externe', ['class' => "control-label col-sm-4"]); %>
 
-        <div class="col-sm-5">
-          <% Form::text('url', '', ['class' => "form-control"]); %>
-        </div>
+      <div class="col-sm-5">
+        <% Form::text('url', '', ['class' => "form-control"]); %>
       </div>
     </div>
 

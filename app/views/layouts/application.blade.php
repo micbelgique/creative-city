@@ -45,7 +45,7 @@
               <ul class="nav navbar-nav pull-right">
                 <li class="add">
                   <a href="<% URL::route('entries.create') %>">
-                    Ajouter une actualité
+                    Soumettre une actualité
                     <i class="glyphicon glyphicon-plus"></i>
                   </a>
                 </li>
