@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/compiled-css/theme.css">
     <link rel="stylesheet" href="/compiled-css/header.css">
     <link rel="stylesheet" href="/compiled-css/entries-index.css">
+    <link rel="stylesheet" href="/compiled-css/entries-show.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
