@@ -15,7 +15,7 @@
 
       <p>
         Nous vous préviendrons par email à chaque fois qu'un vote
-        ou un commentaire ajouté à votre publication.
+        ou un commentaire est ajouté à votre publication.
       </p>
     </div>
   </div>
