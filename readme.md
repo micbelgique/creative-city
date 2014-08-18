@@ -1,4 +1,4 @@
-## CreativeMons
+## Creative City
 
 Run in development :
 
@@ -16,3 +16,5 @@ Run in development :
     $ ssh vagrant@127.0.0.1 -p 2222
     # Perform migration & al on the Vagrant server
     $ vagrant halt
+
+# Installation
