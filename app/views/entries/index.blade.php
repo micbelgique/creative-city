@@ -18,7 +18,7 @@
           <h2><% $entry->title %></h2>
           <hr/>
           <p class="content">
-            <% $entry->content %>
+            <?= substr($entry->content,0 ,240) ?>...
           </p>
           <p class="details">
             <a class="btn btn-default" href="<% $entry->url() %>" role="button">

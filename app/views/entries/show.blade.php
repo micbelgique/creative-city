@@ -3,11 +3,6 @@
 @section('content')
 
   <div class="entries-show">
-    <div class="row">
-      <div class="container picture">
-        <img src="<?= $entry->picture->url('large') ?>">
-      </div>
-    </div>
 
     <div class="col-lg-7">
       <h1>
@@ -15,7 +10,7 @@
       </h1>
 
       <div class="content">
-        <% $entry->content %>
+        <?= nl2br($entry->content) ?>
       </div>
     </div>
 
@@ -78,6 +73,11 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="container picture">
+        <img src="<?= $entry->picture->url('large') ?>">
+      </div>
+    </div>
     <div style="clear:both">
     </div>
 

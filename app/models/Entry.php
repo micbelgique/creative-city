@@ -16,7 +16,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   public function __construct(array $attributes = array()) {
     $this->hasAttachedFile('picture', [
         'styles' => [
-          'large'  => '1140x550#',
+          'large'  => '1140x550',
           'medium' => '360x210#',
           'thumb'  => '100x100'
         ]
@@ -90,7 +90,7 @@ class Entry extends Eloquent implements StaplerableInterface {
   }
 
   public function isPublished() {
-    return $this->upVotes()->count() >= 3 && $this->downVotes()->count() <= 2;
+    return $this->upVotes()->count() >= 4 && $this->downVotes()->count() <= 3;
   }
 
   public function asJson() {
