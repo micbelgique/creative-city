@@ -2,6 +2,9 @@
   height: 550px;
   overflow: hidden;
 }
+.entries-show .picture img{
+  max-width: 100%;
+}
 .entries-show h1 {
   width: 100%;
   background-color: #e53953;
@@ -42,7 +45,7 @@
 }
 .entries-show .link .link-content, .entries-show .link .dates-content {
   float: left;
-  width: 384px;
+  max-width: 384px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -2,6 +2,10 @@
   .picture {
     height:550px;
     overflow:hidden;
+	
+	img {
+	  max-width:100%;
+	}
   }
 
   h1 {
@@ -48,7 +52,7 @@
 
     .link-content, .dates-content {
       float:left;
-      width: 384px;
+      max-width: 384px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
