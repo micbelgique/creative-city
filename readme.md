@@ -1,4 +1,4 @@
-## Creative City
+# Creative City
 
 Run in development :
 
@@ -10,11 +10,15 @@ Run in development :
     $ php artisan serve
 
 
-# Vagrant
+## Vagrant
 
     $ vagrant up
     $ ssh vagrant@127.0.0.1 -p 2222
     # Perform migration & al on the Vagrant server
     $ vagrant halt
 
-# Installation
+## Installation
+
+# Where is it used ?
+
+You can visit http://creativemons.be/ to discover the result.
