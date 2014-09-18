@@ -26,7 +26,7 @@
 }
 .entries .entry .inner-entry .content {
   text-align: left;
-  height: 100px;
+  height: auto;
 }
 .entries .entry .inner-entry .event-date {
   position: absolute;
