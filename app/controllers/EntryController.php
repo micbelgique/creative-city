@@ -4,7 +4,7 @@ class EntryController extends BaseController {
   public function index() {
     $entries = Entry::all()->filter(function($entry){
       return $entry->isPublished();
-    });
+    })->sortByDesc('end_date');
 
     return View::make('entries.index')->with('entries', $entries);
   }
